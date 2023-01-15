@@ -3,14 +3,31 @@
     <title>Recipe Finder</title>
   </head>
   <body>
-    <div class="container">
-      <h1> Welcome to the pantry!</h1>
+    <div id="back">
+      <div class="container">
+        <div class="topnav">
+          <a class="active" href="#home">Home</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </div>
+        <h1> Welcome to the pantry!</h1>
       
-      <form>
+        <form>
+          <label for="ingredientInput">Input ingredients you wish to use:</label>
+          <input id="ingredientInput" type="text" name="ingredientInput">
+      
 
-        <button type="submit" id="submitForm">Find Recipe</button>
-      </form>
-      <p id="showResponse"></p>
+          <label for="mealSelection">Select type of meal:</label>
+          <select name="mealSelection" id="mealSelection">
+            <option value="dinner">Dinner</option>
+            <option value="lunch">Lunch Yen</option>
+            <option value="breakfast">Breakfast</option>
+          </select>
+          <button type="submit" id="submitForm">Find Recipe</button>
+        </form>
+        <p id="showResponse"></p>
+      </div>
     </div>
   </body>
   </html>
