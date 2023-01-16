@@ -7,16 +7,16 @@ import RecipeFinder from './recipes.js'
 //Business Logic
 
 function Search() {
-  this.ingredients; // = document.querySelector('#ingredientInput').value;
-  this.mealType; // = document.querySelector('mealSelection').value;
-  this.health; // = document.querySelector('health').value;
-  this.cookTime; // = document.querySelector('#cookTime').value;
-  this.excluded; // = document.querySelector('#excluded').value; 
+  this.ingredients;
+  this.mealType;
+  this.health;
+  this.cookTime;
+  this.excluded; 
 }
 
-async function getRecipes(recipeParams) {
-  const response = await RecipeFinder.getRecipes(recipeParams);
-  if (response.ok) {
+async function getRecipes(searchParams) {
+  const response = await RecipeFinder.getRecipes(searchParams);
+  if (response.hits) {
     printRecipes(response);
   } else {
     printError(response);
@@ -32,15 +32,15 @@ function printError() {
 
 function handleForm(event){
   event.preventDefault();
-  let recipeParams = new Search();
-  recipeParams.ingredients = document.querySelector('#ingredientInput').value;
-  recipeParams.mealType = document.querySelector('#mealSelection').value;
-  recipeParams.health = document.querySelector('#health').value;
-  recipeParams.cookTime = document.querySelector('#cookTime').value;
-  recipeParams.excluded = document.querySelector('#excluded').value;
-  //document.querySelector('#ingredientInput').value = null;
-  getRecipes(recipeParams);
-  console.log("search object", recipeParams);
+  let searchParams = new Search();
+  searchParams.ingredients = document.querySelector('#ingredientInput').value;
+  searchParams.mealType = document.querySelector('#mealSelection').value;
+  searchParams.health = document.querySelector('#health').value;
+  searchParams.cookTime = document.querySelector('#cookTime').value;
+  searchParams.excluded = document.querySelector('#excluded').value;
+  document.querySelector('#ingredientInput').value = null;
+  getRecipes(searchParams);
+  console.log("search object", searchParams);
 }
 
 window.addEventListener('load', function() {

@@ -1,23 +1,19 @@
 export default class RecipeFinder {
-  static async getRecipes(recipeParams) {
+  static async getRecipes(searchParams) {
     try {
       let food;
       let mealType;
       let health;
       let cookTime;
       let excluded;
+      searchParams.ingredients === '' ? food = '' : food = `&q=${searchParams.ingredients}`;
+      searchParams.mealType === '' ? mealType = '' : mealType = `&mealType=${searchParams.mealType}`;
+      searchParams.health === '' ? health = '' : health = `&health=${searchParams.health}`;
+      searchParams.cookTime === '' ? cookTime = '' : cookTime = `&time=${searchParams.cookTime}`;
+      searchParams.excluded.length === 0 ? excluded = '' : excluded = `&exclude=${searchParams.excluded}`;
 
-      recipeParams.ingredients === '' ? food = '' : food = `&q=${recipeParams.ingredients}`;
-
-      recipeParams.mealType === '' ? mealType = '' : mealType = `&mealType=${recipeParams.mealType}`;
-
-      recipeParams.health === '' ? health = '' : health = `&health=${recipeParams.health}`;
-
-      recipeParams.cookTime === '' ? cookTime = '' : cookTime = `&time=${recipeParams.cookTime}`;
-
-      recipeParams.excluded.length === 0 ? excluded = '' : excluded = `&exclude=${recipeParams.excluded}`;
-      
       const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public${food}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}${mealType}${health}${cookTime}${excluded}&random=true`);
+
       const jsonResponse = await response.json();
       console.log('jsonResponse', jsonResponse);
       if (!response.ok) {
