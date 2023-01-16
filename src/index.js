@@ -2,20 +2,26 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import RecipeFinder from './recipes.js'
-import Search from '.search-obj.js'
 
 //Business Logic
 
-async function getRecipes(recipeParams) {
+async function getRecipes(food, mealType) {
   const response = await RecipeFinder.getRecipes(food, mealType);
-  if (response.status) {
+  console.log(response);
+  if (response.hits) {
     printRecipes(response);
   } else {
     printError(response);
   }
 }
-function printRecipes(){
+function printRecipes(response){
   console.log("print Recipes")
+  response.hits.forEach(element=> {
+    let list= document.createElement("li");
+    document.querySelector("#showResponse").append(list);
+    list.append(element.recipe.label);
+  })
+  
 }
 
 function printError() {
@@ -24,17 +30,13 @@ function printError() {
 
 function handleForm(event){
   event.preventDefault();
-  let recipeParams = new Search();
   const food = document.querySelector('#ingredientInput').value;
-  console.log(food);
   document.querySelector('#ingredientInput').value = null;
-  const mealType = document.querySelector('mealSelection').value;
-  getRecipes(recipeParams);
-  console.log("submitted");
+  const mealType = document.querySelector('#mealSelection').value;
+  getRecipes(food, mealType);
 }
 
 window.addEventListener('load', function() {
-  console.log("running");
   document.querySelector('form').addEventListener('submit', handleForm);
 
 });
