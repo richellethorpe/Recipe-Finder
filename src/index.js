@@ -14,11 +14,15 @@ async function getRecipes(food, mealType) {
   }
 }
 function printRecipes(response){
-  console.log("print Recipes")
+  let results = document.querySelector("#showResponse");
   response.hits.forEach(element=> {
+    let imgTag= document.createElement("img");
+    imgTag.setAttribute("src", element.recipe.images.SMALL.url);
+    results.append(imgTag);
     let list= document.createElement("li");
-    document.querySelector("#showResponse").append(list);
     list.append(element.recipe.label);
+    results.append(list);
+    
   })
   
 }
