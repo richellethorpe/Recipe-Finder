@@ -7,7 +7,6 @@ import RecipeFinder from './recipes.js'
 
 async function getRecipes(food, mealType) {
   const response = await RecipeFinder.getRecipes(food, mealType);
-  console.log(response);
   if (response.hits) {
     printRecipes(response);
   } else {
@@ -30,6 +29,7 @@ function printError() {
 
 function handleForm(event){
   event.preventDefault();
+  document.querySelector("#showResponse").innerText = null;
   const food = document.querySelector('#ingredientInput').value;
   document.querySelector('#ingredientInput').value = null;
   const mealType = document.querySelector('#mealSelection').value;
