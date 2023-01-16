@@ -1,7 +1,7 @@
 // import 'bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import RecipeFinder from './recipes.js'
+import RecipeFinder from './recipes.js';
 
 //Business Logic
 
@@ -13,25 +13,33 @@ async function getRecipes(food, mealType) {
     printError(response);
   }
 }
-function printRecipes(response){
+
+function printRecipes(response) {
   let results = document.querySelector("#showResponse");
-  response.hits.forEach(element=> {
-    let imgTag= document.createElement("img");
+  response.hits.forEach(element => {
+    let imgTag = document.createElement("img");
     imgTag.setAttribute("src", element.recipe.images.SMALL.url);
+    imgTag.setAttribute("class", 'recipeImg');
+    imgTag.onclick = function () {
+      window.location.href = `${element.recipe.url}`;
+    };
     results.append(imgTag);
-    let list= document.createElement("li");
-    list.append(element.recipe.label);
+    let list = document.createElement("li");
+    let recipeLink = document.createElement('a');
+    recipeLink.setAttribute('href', element.recipe.url);
+    recipeLink.innerHTML = element.recipe.label;
+    list.append(recipeLink);
     results.append(list);
-    
-  })
-  
+  });
+
 }
 
-function printError() {
-  console.log("print Error");
+function printError(errorMessage) {
+  let results = document.querySelector("#showResponse");
+  results.append(errorMessage);
 }
 
-function handleForm(event){
+function handleForm(event) {
   event.preventDefault();
   document.querySelector("#showResponse").innerText = null;
   const food = document.querySelector('#ingredientInput').value;
@@ -40,7 +48,7 @@ function handleForm(event){
   getRecipes(food, mealType);
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   document.querySelector('form').addEventListener('submit', handleForm);
 
 });
