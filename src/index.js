@@ -17,7 +17,7 @@ function printRecipes(response){
   let results = document.querySelector("#showResponse");
   response.hits.forEach(element=> {
     let imgTag= document.createElement("img");
-    imgTag.setAttribute("src", element.recipe.images.SMALL.url);
+    imgTag.setAttribute("src", element.recipe.images.REGULAR.url);
     results.append(imgTag);
     let list= document.createElement("li");
     list.append(element.recipe.label);
