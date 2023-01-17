@@ -33,10 +33,12 @@ function printError() {
 
 function handleForm(event){
   event.preventDefault();
+  console.log("running");
   document.querySelector("#showResponse").innerText = null;
   const food = document.querySelector('#ingredientInput').value;
   document.querySelector('#ingredientInput').value = null;
   const mealType = document.querySelector('#mealSelection').value;
+  console.log(mealType);
   getRecipes(food, mealType);
 }
 
