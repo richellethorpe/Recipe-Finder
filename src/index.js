@@ -22,8 +22,14 @@ async function getRecipes(searchParams) {
     printError(response);
   }
 }
-function printRecipes(){
+function printRecipes(response){
   console.log("print Recipes")
+  let results = document.querySelector('#showResponse');
+  response.hits.forEach(element => {
+    let newRecipeImg = document.createElement('img');
+    newRecipeImg.setAttribute('src', element.recipe.images.SMALL.url);
+    results.append(newRecipeImg);
+  });
 }
 
 function printError() {
