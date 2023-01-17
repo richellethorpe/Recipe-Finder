@@ -49,13 +49,10 @@ function handleForm(event){
   const food = document.querySelector('#ingredientInput').value;
   document.querySelector('#ingredientInput').value = null;
   const mealType = document.querySelector('#mealSelection').value;
-<<<<<<< HEAD
   console.log(mealType);
   getRecipes(food, mealType);
-=======
   const newUrl = getURL(food, mealType)
   getRecipes(newUrl);
->>>>>>> url_branch
 }
 
 window.addEventListener('load', function() {
