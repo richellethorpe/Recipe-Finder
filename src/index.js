@@ -5,14 +5,25 @@ import RecipeFinder from './recipes.js'
 
 //Business Logic
 
-async function getRecipes(food, mealType) {
-  const response = await RecipeFinder.getRecipes(food, mealType);
+async function getRecipes(url) {
+  const response = await RecipeFinder.getRecipes(url);
   if (response.hits) {
     printRecipes(response);
   } else {
     printError(response);
   }
 }
+
+function getURL (food, mealType){
+  let url;
+  if (mealType.length === 0){
+     url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&random=true`);
+  }else {
+    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&mealType=${mealType}&random=true`);
+  }
+  return url;
+}
+
 function printRecipes(response){
   let results = document.querySelector("#showResponse");
   response.hits.forEach(element=> {
@@ -38,8 +49,13 @@ function handleForm(event){
   const food = document.querySelector('#ingredientInput').value;
   document.querySelector('#ingredientInput').value = null;
   const mealType = document.querySelector('#mealSelection').value;
+<<<<<<< HEAD
   console.log(mealType);
   getRecipes(food, mealType);
+=======
+  const newUrl = getURL(food, mealType)
+  getRecipes(newUrl);
+>>>>>>> url_branch
 }
 
 window.addEventListener('load', function() {
