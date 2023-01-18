@@ -8,8 +8,8 @@ export default class RecipeFinder {
           const errorMessage = `${response.status} ${response.statusText} ${jsonResponse.message}`;
           throw new Error(errorMessage);
         }
-        console.log("this is the response");
-        console.log(response);
+        // console.log("this is the response");
+        // console.log(response);
         // console.log(jsonResponse);
         return jsonResponse;
       } catch (error) {
