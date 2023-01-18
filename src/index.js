@@ -40,7 +40,6 @@ function printRecipes(response){
     results.append(list);
     
   })
-
 }
 
 function printError() {
