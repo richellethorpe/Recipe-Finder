@@ -10,7 +10,7 @@ export default class RecipeFinder {
       searchObject.mealType === '' ? mealType = '' : mealType = `&mealType=${searchObject.mealType}`;
       searchObject.health === '' ? health = '' : health = `&health=${searchObject.health}`;
       searchObject.cookTime === '' ? cookTime = '' : cookTime = `&time=${searchObject.cookTime}`;
-      searchObject.excluded.length === 0 ? excluded = '' : excluded = `&exclude=${searchObject.excluded}`;
+      searchObject.excluded === '' ? excluded = '' : excluded = `&exclude=${searchObject.excluded}`;
      
       const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public${ingredients}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}${mealType}${health}${cookTime}${excluded}&random=true`);
       
