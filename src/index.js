@@ -1,10 +1,9 @@
 // import 'bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import RecipeFinder from './recipes.js'
-// import Search from '.search-obj.js'
+import RecipeFinder from './recipes.js';
 
-//Business Logic
+
 
 function Search() {
   this.ingredients;
@@ -22,22 +21,37 @@ async function getRecipes(searchObject) {
     printError(response);
   }
 }
+
+
 function printRecipes(response){
-  console.log("print Recipes")
-  let results = document.querySelector('#showResponse');
+  let results = document.querySelector("#showResponse");
   response.hits.forEach(element => {
-    let newRecipeImg = document.createElement('img');
-    newRecipeImg.setAttribute('src', element.recipe.images.SMALL.url);
-    results.append(newRecipeImg);
-  });
+    let imgTag = document.createElement("img");
+    imgTag.setAttribute("src", element.recipe.images.SMALL.url);
+    imgTag.setAttribute("class", 'recipeImg');
+    imgTag.onclick = function () {
+      window.location.href = `${element.recipe.url}`;
+    };
+    results.append(imgTag);
+    let list = document.createElement("li");
+    let recipeLink = document.createElement('a');
+    recipeLink.setAttribute('href', element.recipe.url);
+    recipeLink.innerHTML = element.recipe.label;
+    list.append(recipeLink);
+    results.append(list);
+    
+  })
+
 }
 
-function printError() {
-  console.log("print Error");
+function printError(errorMessage) {
+  let results = document.querySelector("#showResponse");
+  results.append(errorMessage);
 }
 
-function handleForm(event){
+function handleForm(event) {
   event.preventDefault();
+  document.querySelector("#showResponse").innerText=null;
   let searchObject = new Search();
   searchObject.ingredients = document.querySelector('#ingredientInput').value;
   searchObject.mealType = document.querySelector('#mealSelection').value;
@@ -49,8 +63,7 @@ function handleForm(event){
   console.log("search object", searchObject);
 }
 
-window.addEventListener('load', function() {
-  console.log("running");
+window.addEventListener('load', function () {
   document.querySelector('form').addEventListener('submit', handleForm);
 
 });
