@@ -14,14 +14,18 @@ async function getRecipes(url) {
   }
 }
 
-function getURL (food, mealType){
+function getURL (food, mealType, healthType){
   let url;
-  if (mealType.length === 0 && healt){
+  if (mealType.length === 0 && healthType.length === 0){
      url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&random=true`);
-  }else {
+  }else if(mealType.length > 0 && healthType.length === 0){
     url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&mealType=${mealType}&random=true`);
+  }else if (mealType.length === 0 && healthType.length > 0){
+    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&health=${healthType}&random=true`);
+  }else if (mealType.length > 0 && healthType.length > 0){
+    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&mealType=${mealType}&health=${healthType}&random=true`);
   }
-  return url;
+  return url
 }
 
 function printRecipes(response){
@@ -46,10 +50,9 @@ function handleForm(event){
   event.preventDefault();
   document.querySelector("#showResponse").innerText = null;
   const food = document.querySelector('#ingredientInput').value;
-  document.querySelector('#ingredientInput').value = null;
   const mealType = document.querySelector('#mealSelection').value;
   const healthType = document.querySelector('#healthSelection').value;
-  const newUrl = getURL(food, mealType)
+  const newUrl = getURL(food, mealType, healthType)
   getRecipes(newUrl);
 }
 
