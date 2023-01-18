@@ -3,25 +3,19 @@
 import './css/styles.css';
 import RecipeFinder from './recipes.js';
 
-//Business Logic
-function getURL (food, mealType, healthType){
-  let url;
-  if (mealType.length === 0 && healthType.length === 0){
-     url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&random=true`);
-  }else if(mealType.length > 0 && healthType.length === 0){
-    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&mealType=${mealType}&random=true`);
-  }else if (mealType.length === 0 && healthType.length > 0){
-    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&health=${healthType}&random=true`);
-  }else if (mealType.length > 0 && healthType.length > 0){
-    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&mealType=${mealType}&health=${healthType}&random=true`);
-  }
-  return url
+
+
+function Search() {
+  this.ingredients;
+  this.mealType;
+  this.health;
+  this.cookTime;
+  this.excluded; 
 }
 
-async function getRecipes(newUrl) {
-  const response = await RecipeFinder.getRecipes(newUrl);
+async function getRecipes(searchObject) {
+  const response = await RecipeFinder.getRecipes(searchObject);
   if (response.hits) {
-    console.log("success!")
     printRecipes(response);
   } else {
     printError(response);
@@ -57,12 +51,16 @@ function printError(errorMessage) {
 
 function handleForm(event) {
   event.preventDefault();
-  document.querySelector("#showResponse").innerText = null;
-  const food = document.querySelector('#ingredientInput').value;
-  const mealType = document.querySelector('#mealSelection').value;
-  const healthType = document.querySelector('#healthSelection').value;
-  const newUrl = getURL(food, mealType, healthType)
-  getRecipes(newUrl);
+  document.querySelector("#showResponse").innerText=null;
+  let searchObject = new Search();
+  searchObject.ingredients = document.querySelector('#ingredientInput').value;
+  searchObject.mealType = document.querySelector('#mealSelection').value;
+  searchObject.health = document.querySelector('#health').value;
+  searchObject.cookTime = document.querySelector('#cookTime').value;
+  searchObject.excluded = document.querySelector('#excluded').value;
+  document.querySelector('#ingredientInput').value = null;
+  getRecipes(searchObject);
+  console.log("search object", searchObject);
 }
 
 window.addEventListener('load', function () {

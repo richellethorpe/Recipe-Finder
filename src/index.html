@@ -18,29 +18,33 @@
           <input id="ingredientInput" type="text" name="ingredientInput">
           <br>
           <br>
-          <label for="mealSelection">Select type of meal (optional):</label>
+          <label for="mealSelection">Select type of meal:</label>
           <select name="mealSelection" id="mealSelection">
-            <option></option>
+            <option value=""></option>
             <option value="dinner">Dinner</option>
             <option value="lunch">Lunch</option>
             <option value="breakfast">Breakfast</option>
           </select>
           <br>
           <br>
-          <label for="healthSelection">Select option of diet type (optional):</label>
-          <select name="healthSelection" id="healthSelection">
+          <label for="health">Select health consideration:</label>
+          <select name="health" id="health">
             <option></option>
-            <option value="dairy-free">Dairy-Free</option>
-            <option value="gluten-free">Gluten-Free</option>
-            <option value="keto-friendly">Keto-Friendly</option>
-            <option value="kosher">Kosher</option>
+            <option value="">Health Option</option>
+            <option value="vegetarian">Vegetarian</option>
             <option value="vegan">Vegan</option>
-            <option value="vegitarian">Vegitarian</option>
+            <option value="pescatarian">Pescatarian</option>
           </select>
           <br>
           <br>
-
-          
+          <label for="cookTime">Enter a MAX prep-time:</label>
+          <input id="cookTime" type="number" min=0 name="cookTime">
+          <br>
+          <br>
+          <label for="excluded">Enter ingredients you wish to exclude:</label>
+          <input id="excluded" type="text" name="excluded">
+          <br>
+          <br>
           <button type="submit" id="submitForm">Find Recipe</button>
         </form>
         <p id="showResponse"></p>
