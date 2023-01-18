@@ -18,13 +18,13 @@ async function getRecipes(newUrl) {
 function getURL (food, mealType, healthType){
   let url;
   if (mealType.length === 0 && healthType.length === 0){
-     url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}&random=true`);
+     url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=${process.env.APP_ID}&app_key=${process.env.API_KEY}&random=true`);
   }else if(mealType.length > 0 && healthType.length === 0){
-    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}&mealType=${mealType}&random=true`);
+    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=${process.env.APP_ID}&app_key=${process.env.API_KEY}&mealType=${mealType}&random=true`);
   }else if (mealType.length === 0 && healthType.length > 0){
-    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}&health=${healthType}&random=true`);
+    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=${process.env.APP_ID}&app_key=${process.env.API_KEY}&health=${healthType}&random=true`);
   }else if (mealType.length > 0 && healthType.length > 0){
-    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}&mealType=${mealType}&health=${healthType}&random=true`);
+    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=${process.env.APP_ID}&app_key=${process.env.API_KEY}&mealType=${mealType}&health=${healthType}&random=true`);
   }
   return url
 }
@@ -57,12 +57,9 @@ function printError(errorMessage) {
 
 function handleForm(event) {
   event.preventDefault();
-  console.log("running");
   document.querySelector("#showResponse").innerText = null;
   const food = document.querySelector('#ingredientInput').value;
   const mealType = document.querySelector('#mealSelection').value;
-  console.log(mealType);
-  getRecipes(food, mealType);
   const healthType = document.querySelector('#healthSelection').value;
   const newUrl = getURL(food, mealType, healthType)
   getRecipes(newUrl);
