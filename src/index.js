@@ -14,8 +14,8 @@ function Search() {
   this.excluded; 
 }
 
-async function getRecipes(searchParams) {
-  const response = await RecipeFinder.getRecipes(searchParams);
+async function getRecipes(searchObject) {
+  const response = await RecipeFinder.getRecipes(searchObject);
   if (response.hits) {
     printRecipes(response);
   } else {
@@ -38,15 +38,15 @@ function printError() {
 
 function handleForm(event){
   event.preventDefault();
-  let searchParams = new Search();
-  searchParams.ingredients = document.querySelector('#ingredientInput').value;
-  searchParams.mealType = document.querySelector('#mealSelection').value;
-  searchParams.health = document.querySelector('#health').value;
-  searchParams.cookTime = document.querySelector('#cookTime').value;
-  searchParams.excluded = document.querySelector('#excluded').value;
+  let searchObject = new Search();
+  searchObject.ingredients = document.querySelector('#ingredientInput').value;
+  searchObject.mealType = document.querySelector('#mealSelection').value;
+  searchObject.health = document.querySelector('#health').value;
+  searchObject.cookTime = document.querySelector('#cookTime').value;
+  searchObject.excluded = document.querySelector('#excluded').value;
   document.querySelector('#ingredientInput').value = null;
-  getRecipes(searchParams);
-  console.log("search object", searchParams);
+  getRecipes(searchObject);
+  console.log("search object", searchObject);
 }
 
 window.addEventListener('load', function() {
