@@ -29,3 +29,8 @@ body {
   background-color: #04AA6D;
   color: white;
 }
+
+/* Turns the cursor over the recipe images into a pointer */
+.recipeImg {
+  cursor: pointer;
+}
