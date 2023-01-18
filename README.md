@@ -1,6 +1,6 @@
-# 
-#### By Richelle Thorpe
-#### 
+# Recipe Finder
+#### By Richelle Thorpe, Chloe ONeil, Noah Cowan, Geoffrey Gao, Brian Yoder
+#### Find recipes based upon user selections
 
 ## Technologies Used
 - HTML
