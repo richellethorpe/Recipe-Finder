@@ -16,7 +16,7 @@ async function getRecipes(url) {
 
 function getURL (food, mealType){
   let url;
-  if (mealType.length === 0){
+  if (mealType.length === 0 && healt){
      url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&random=true`);
   }else {
     url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&mealType=${mealType}&random=true`);
@@ -48,6 +48,7 @@ function handleForm(event){
   const food = document.querySelector('#ingredientInput').value;
   document.querySelector('#ingredientInput').value = null;
   const mealType = document.querySelector('#mealSelection').value;
+  const healthType = document.querySelector('#healthSelection').value;
   const newUrl = getURL(food, mealType)
   getRecipes(newUrl);
 }
