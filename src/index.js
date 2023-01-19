@@ -1,7 +1,7 @@
 // import 'bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import RecipeFinder from './recipes.js';
+import RecipeFinder from './services/recipes.js';
 
 
 
@@ -10,7 +10,7 @@ function Search() {
   this.mealType;
   this.health;
   this.cookTime;
-  this.excluded; 
+  this.excluded;
 }
 
 async function getRecipes(searchObject) {
@@ -23,7 +23,7 @@ async function getRecipes(searchObject) {
 }
 
 
-function printRecipes(response){
+function printRecipes(response) {
   let results = document.querySelector("#showResponse");
   response.hits.forEach(element => {
     let imgTag = document.createElement("img");
@@ -39,7 +39,7 @@ function printRecipes(response){
     recipeLink.innerHTML = element.recipe.label;
     list.append(recipeLink);
     results.append(list);
-    
+
   })
 
 }
@@ -51,7 +51,7 @@ function printError(errorMessage) {
 
 function handleForm(event) {
   event.preventDefault();
-  document.querySelector("#showResponse").innerText=null;
+  document.querySelector("#showResponse").innerText = null;
   let searchObject = new Search();
   searchObject.ingredients = document.querySelector('#ingredientInput').value;
   searchObject.mealType = document.querySelector('#mealSelection').value;
