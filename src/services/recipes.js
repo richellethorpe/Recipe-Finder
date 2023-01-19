@@ -20,13 +20,20 @@ export default class RecipeFinder {
       let cookTime;
       let excluded;
 
+      //Specifies returns of API Call
+      let returnField = ["image", "url", "label"];
+      let returnFieldQuery = "";
+      returnField.forEach(element => {
+        returnFieldQuery += `&field=${element}`;
+      });
+
       searchObject.ingredients === '' ? ingredients = '' : ingredients = `&q=${searchObject.ingredients}`;
       searchObject.mealType === '' ? mealType = '' : mealType = `&mealType=${searchObject.mealType}`;
       searchObject.health === '' ? health = '' : health = `&health=${searchObject.health}`;
       searchObject.cookTime === '' ? cookTime = '' : cookTime = `&time=${searchObject.cookTime}`;
       searchObject.excluded.length === '' ? excluded = '' : excluded = `&exclude=${searchObject.excluded}`;
 
-      const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public${ingredients}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}${mealType}${health}${cookTime}${excluded}&random=true`);
+      const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public${ingredients}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}${mealType}${health}${cookTime}${excluded}&random=true${returnFieldQuery}`);
 
       const jsonResponse = await response.json();
       if (!response.ok) {

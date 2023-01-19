@@ -2,6 +2,7 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import RecipeFinder from './services/recipes.js';
+import { defaultRecipes, favoriteRecipes } from './services/default_recipes.js';
 
 //Returns an array of recipe objects
 async function getRecipes() {
@@ -26,7 +27,7 @@ function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
   //Creates clickable image
   let imgTag = document.createElement("img");
-  imgTag.setAttribute("src", recipeObject.recipe.images.SMALL.url);
+  imgTag.setAttribute("src", recipeObject.recipe.image);
   imgTag.setAttribute("class", 'recipeImg');
   imgTag.onclick = function () {
     window.open(`${recipeObject.recipe.url}`);
@@ -56,4 +57,8 @@ async function handleForm(event) {
 
 window.addEventListener('load', function () {
   document.querySelector('form').addEventListener('submit', handleForm);
+  console.log(defaultRecipes);
+  console.log(favoriteRecipes);
+  printAllRecipes(defaultRecipes);
+  printAllRecipes(favoriteRecipes);
 });
