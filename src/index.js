@@ -57,8 +57,5 @@ async function handleForm(event) {
 
 window.addEventListener('load', function () {
   document.querySelector('form').addEventListener('submit', handleForm);
-  console.log(defaultRecipes);
-  console.log(favoriteRecipes);
   printAllRecipes(defaultRecipes);
-  printAllRecipes(favoriteRecipes);
 });

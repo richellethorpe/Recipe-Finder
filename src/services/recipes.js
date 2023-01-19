@@ -14,18 +14,15 @@ export default class RecipeFinder {
     try {
       const searchObject = new RecipeFinder();
 
-      let ingredients;
-      let mealType;
-      let health;
-      let cookTime;
-      let excluded;
-
       //Specifies returns of API Call
       let returnField = ["image", "url", "label"];
       let returnFieldQuery = "";
       returnField.forEach(element => {
         returnFieldQuery += `&field=${element}`;
       });
+
+
+      let ingredients, mealType, health, cookTime, excluded;
 
       searchObject.ingredients === '' ? ingredients = '' : ingredients = `&q=${searchObject.ingredients}`;
       searchObject.mealType === '' ? mealType = '' : mealType = `&mealType=${searchObject.mealType}`;

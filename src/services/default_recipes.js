@@ -1,3 +1,4 @@
+//Contains an array of the default recipes to be shown on the home page prior to search
 export const defaultRecipes = [
   {
     "recipe": {
@@ -22,6 +23,7 @@ export const defaultRecipes = [
   }
 ];
 
+//Contains an array of the favorite recipes to be shown on the home page prior to search
 export const favoriteRecipes = [
   {
     "name": "Geoffrey",
