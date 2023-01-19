@@ -20,7 +20,7 @@ export default class RecipeFinder {
         throw new Error(errorMessage);
       }
       // console.log('response', response);
-      // console.log('jsonResponse', jsonResponse);
+      console.log('jsonResponse', jsonResponse);
       // console.log('response url', response.url);
       return jsonResponse; 
     } catch(error) {

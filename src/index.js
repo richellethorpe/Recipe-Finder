@@ -29,13 +29,15 @@ function printRecipes(response){
     let imgTag = document.createElement("img");
     imgTag.setAttribute("src", element.recipe.images.SMALL.url);
     imgTag.setAttribute("class", 'recipeImg');
+    // imgTag.setAttribute('target', '_blank');
     imgTag.onclick = function () {
-      window.location.href = `${element.recipe.url}`;
+      window.location.href = (`${element.recipe.url}`);
     };
     results.append(imgTag);
     let list = document.createElement("li");
     let recipeLink = document.createElement('a');
-    recipeLink.setAttribute('href', element.recipe.url);
+    recipeLink.setAttribute('href', element.recipe.url,);
+    recipeLink.setAttribute('target', '_blank');
     recipeLink.innerHTML = element.recipe.label;
     list.append(recipeLink);
     results.append(list);
