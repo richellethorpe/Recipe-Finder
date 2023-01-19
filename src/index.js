@@ -3,45 +3,42 @@
 import './css/styles.css';
 import RecipeFinder from './services/recipes.js';
 
-
-
-function Search() {
-  this.ingredients;
-  this.mealType;
-  this.health;
-  this.cookTime;
-  this.excluded;
-}
-
-async function getRecipes(searchObject) {
-  const response = await RecipeFinder.getRecipes(searchObject);
+//Returns an array of recipe objects
+async function getRecipes() {
+  const response = await RecipeFinder.getRecipes();
   if (response.hits) {
-    printRecipes(response);
+    //Array of recipe objects from API call
+    return response.hits;
   } else {
     printError(response);
   }
 }
 
+//From an array of recipes objects, prints all of them
+function printAllRecipes(recipesListObject) {
+  recipesListObject.forEach(element => {
+    printRecipe(element);
+  });
+}
 
-function printRecipes(response) {
+//Prints a single recipe
+function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
-  response.hits.forEach(element => {
-    let imgTag = document.createElement("img");
-    imgTag.setAttribute("src", element.recipe.images.SMALL.url);
-    imgTag.setAttribute("class", 'recipeImg');
-    imgTag.onclick = function () {
-      window.location.href = `${element.recipe.url}`;
-    };
-    results.append(imgTag);
-    let list = document.createElement("li");
-    let recipeLink = document.createElement('a');
-    recipeLink.setAttribute('href', element.recipe.url);
-    recipeLink.innerHTML = element.recipe.label;
-    list.append(recipeLink);
-    results.append(list);
-
-  })
-
+  //Creates clickable image
+  let imgTag = document.createElement("img");
+  imgTag.setAttribute("src", recipeObject.recipe.images.SMALL.url);
+  imgTag.setAttribute("class", 'recipeImg');
+  imgTag.onclick = function () {
+    window.open(`${recipeObject.recipe.url}`);
+  };
+  results.append(imgTag);
+  //Creates Link
+  let list = document.createElement("li");
+  let recipeLink = document.createElement('a');
+  recipeLink.setAttribute('href', recipeObject.recipe.url);
+  recipeLink.innerHTML = recipeObject.recipe.label;
+  list.append(recipeLink);
+  results.append(list);
 }
 
 function printError(errorMessage) {
@@ -49,21 +46,14 @@ function printError(errorMessage) {
   results.append(errorMessage);
 }
 
-function handleForm(event) {
+async function handleForm(event) {
   event.preventDefault();
+  let recipeObjectsList = await getRecipes();
   document.querySelector("#showResponse").innerText = null;
-  let searchObject = new Search();
-  searchObject.ingredients = document.querySelector('#ingredientInput').value;
-  searchObject.mealType = document.querySelector('#mealSelection').value;
-  searchObject.health = document.querySelector('#health').value;
-  searchObject.cookTime = document.querySelector('#cookTime').value;
-  searchObject.excluded = document.querySelector('#excluded').value;
   document.querySelector('#ingredientInput').value = null;
-  getRecipes(searchObject);
-  console.log("search object", searchObject);
+  printAllRecipes(recipeObjectsList);
 }
 
 window.addEventListener('load', function () {
   document.querySelector('form').addEventListener('submit', handleForm);
-
 });
