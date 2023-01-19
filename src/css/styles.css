@@ -34,3 +34,8 @@ body {
 .recipeImg {
   cursor: pointer;
 }
+
+/* input[type="text"]
+{
+    font-size:12px;
+} */

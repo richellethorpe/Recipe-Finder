@@ -30,7 +30,9 @@ function printRecipes(response){
     imgTag.setAttribute("src", element.recipe.images.SMALL.url);
     imgTag.setAttribute("class", 'recipeImg');
     imgTag.onclick = function () {
-      window.location.href = `${element.recipe.url}`;
+      // window.location.href = `${element.recipe.url}`;
+    
+      console.log(`${element.recipe.url}'_blank'`);
     };
     results.append(imgTag);
     let list = document.createElement("li");
