@@ -31,7 +31,7 @@ function printRecipes(response){
     imgTag.setAttribute("class", 'recipeImg');
     // imgTag.setAttribute('target', '_blank');
     imgTag.onclick = function () {
-      window.location.href = (`${element.recipe.url}`);
+      window.open(`${element.recipe.url}`);
     };
     results.append(imgTag);
     let list = document.createElement("li");
