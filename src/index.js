@@ -1,9 +1,8 @@
-// import 'bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import RecipeFinder from './services/recipes.js';
 import { defaultRecipes, favoriteRecipes } from './services/default_recipes.js';
-import { Button } from 'bootstrap';
 
 //Business Logic
 
@@ -92,7 +91,7 @@ function refreshInventoryList() {
       let currentInventory = JSON.parse(sessionStorage.getItem('inventory'));
       currentInventory = currentInventory.filter(item => item !== element);
       sessionStorage.setItem('inventory', JSON.stringify(currentInventory));
-    })
+    });
     ingredient.append(deleteButton);
     ul.append(ingredient);
   });
