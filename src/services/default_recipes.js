@@ -93,4 +93,4 @@ export const favoriteRecipes = [
       "label": "No-Bake Cinnamon Roll Bites"
     }
   }
-]
+];

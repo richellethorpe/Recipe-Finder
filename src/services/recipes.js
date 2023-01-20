@@ -2,7 +2,22 @@ export default class RecipeFinder {
 
   //Creates search object based on form input fields
   constructor() {
-    this.ingredients = document.querySelector('#ingredientInput').value;
+    // this.ingredients = document.querySelector('#ingredientInput').value;
+    // this.mealType = document.querySelector('#mealSelection').value;
+    // this.health = document.querySelector('#health').value;
+    // this.cookTime = document.querySelector('#cookTime').value;
+    // this.excluded = document.querySelector('#excluded').value;
+    this.ingredients = '';
+    this.mealType = '';
+    this.health = '';
+    this.cookTime = '';
+    this.excluded = '';
+  }
+
+  //Pulls the form and sessionStorage data and populates the object's attributes
+  parseForm() {
+    //Creates Ingredients query term from the session storage array
+    this.ingredients = JSON.parse(sessionStorage.getItem('inventory')).toString();
     this.mealType = document.querySelector('#mealSelection').value;
     this.health = document.querySelector('#health').value;
     this.cookTime = document.querySelector('#cookTime').value;
@@ -13,7 +28,7 @@ export default class RecipeFinder {
   static async getRecipes() {
     try {
       const searchObject = new RecipeFinder();
-
+      searchObject.parseForm();
       //Specifies returns of API Call
       let returnField = ["image", "url", "label"];
       let returnFieldQuery = "";
@@ -28,7 +43,7 @@ export default class RecipeFinder {
       searchObject.mealType === '' ? mealType = '' : mealType = `&mealType=${searchObject.mealType}`;
       searchObject.health === '' ? health = '' : health = `&health=${searchObject.health}`;
       searchObject.cookTime === '' ? cookTime = '' : cookTime = `&time=${searchObject.cookTime}`;
-      searchObject.excluded.length === '' ? excluded = '' : excluded = `&exclude=${searchObject.excluded}`;
+      searchObject.excluded === '' ? excluded = '' : excluded = `&exclude=${searchObject.excluded}`;
 
       const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public${ingredients}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}${mealType}${health}${cookTime}${excluded}&random=true${returnFieldQuery}`);
 
