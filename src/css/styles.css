@@ -52,7 +52,7 @@ body {
 
 .navlinks a.active {
   background-color: #FFB100;
-  color: white;
+  color: black;
 }
 
 .menubutton {
@@ -62,13 +62,13 @@ body {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
+  width: 40px;
   height: 21px;
 }
 
 
 .menubutton .bar {
-  height: 3px;
+  height: 4px;
   width: 100%;
   background-color: black;
   border-radius: 10px;
@@ -107,6 +107,12 @@ body {
   }
 }
 
+.recipeImg {
+  cursor: pointer;
+}
 
-
+#showResponse img {
+  height: 350px;
+  width: auto;
+}
 
