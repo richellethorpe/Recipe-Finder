@@ -34,3 +34,12 @@ body {
 .recipeImg {
   cursor: pointer;
 }
+
+/* Column design for favorites page */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
