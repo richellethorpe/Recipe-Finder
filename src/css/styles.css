@@ -1,59 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+
 body {
-  background-color: bisque;
+  margin: 0;
+  padding: 0;
+  background-color: #F0ECCF;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
+
+.navbar {
   display: flex;
-  background-color: #333;
-  overflow: hidden;
-}
-
-/* style the title box */
-.siteTitle {
-  display: flex;
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-
-/* Style the links inside the navigation bar */
-.navbar-links a {
-  display: flex;
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-
-/* Change the color of links on hover */
-.navbar-links a:hover {
-  background-color: #ddd;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FBC252;
   color: black;
 }
 
-/* Add a color to the active/current link */
-.navbar-links a.active {
-  background-color: #04AA6D;
+.site-title {
+  font-size: 1.5rem;
+  margin: .5rem;
+}
+
+
+.navlinks {
+  height: 100%;
+}
+
+.navlinks ul{
+  display: flex;
+  margin: 0%;
+  padding: 0%;
+}
+
+.navlinks li {
+  list-style: none;
+}
+
+.navlinks li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+}
+
+.navlinks li:hover {
+  background-color: #FFB100;
+}
+
+.navlinks a.active {
+  background-color: #FFB100;
   color: white;
 }
 
-/* Turns the cursor over the recipe images into a pointer */
-.recipeImg {
-  cursor: pointer;
-}
-
-/* hamburger button */
-
-.menu-button {
+.menubutton {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: .75rem;
+  right: 1rem;
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -61,19 +66,47 @@ body {
   height: 21px;
 }
 
-.menu-button .bar {
+
+.menubutton .bar {
   height: 3px;
   width: 100%;
-  background-color: white;
+  background-color: black;
   border-radius: 10px;
 }
 
 @media (max-width: 600px) {
-  .menu-button {
+  .menubutton {
     display: flex;
   }
 
-  .navbar-links {
+  .navlinks {
     display: none;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navlinks ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navlinks ul li {
+    text-align: center;
+  }
+
+  .navlinks ul li a {
+    padding: .5rem 1rem;
+  }
+
+  .navlinks.active {
+    display: flex;
   }
 }
+
+
+
+
