@@ -6,7 +6,7 @@ import { defaultRecipes, favoriteRecipes } from './services/default_recipes.js';
 
 //Business Logic
 
-//Returns an array of recipe objects
+//Returns an array of recipe objects from the API call
 async function getRecipes() {
   const response = await RecipeFinder.getRecipes();
   if (response.hits) {
@@ -17,7 +17,7 @@ async function getRecipes() {
   }
 }
 
-//From an array of recipes objects, prints all of them
+//Prints each element in an array of recipe objects
 function printAllRecipes(recipesListObject) {
   recipesListObject.forEach(element => {
     printRecipe(element);
