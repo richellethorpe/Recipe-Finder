@@ -2,11 +2,6 @@ export default class RecipeFinder {
 
   //Creates search object based on form input fields
   constructor() {
-    // this.ingredients = document.querySelector('#ingredientInput').value;
-    // this.mealType = document.querySelector('#mealSelection').value;
-    // this.health = document.querySelector('#health').value;
-    // this.cookTime = document.querySelector('#cookTime').value;
-    // this.excluded = document.querySelector('#excluded').value;
     this.ingredients = '';
     this.mealType = '';
     this.health = '';
