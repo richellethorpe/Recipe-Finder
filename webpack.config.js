@@ -12,6 +12,21 @@ const Dotenv = require('dotenv-webpack');
 //   })
 // })
 
+// let pages = ['about', 'blog', 'contact'];
+// let multiPage = pages.map(page => {
+//   return new HtmlWebpackPlugin({
+//     filename: `${page}.html`,
+//     template: `./src/${page}.html`,
+//   })
+// })
+
+let pages = ['favorites'];
+let multiPage = pages.map(page => {
+  return new HtmlWebpackPlugin({
+    filename: `${page}.html`,
+    template: `./src/${page}.html`,
+  })
+})
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -43,7 +58,7 @@ module.exports = {
     //   template: './src/contact.html',
     //   filename: 'contact.html'
     // })
-  ],
+  ].concat(multiPage),
   module: {
     rules: [
       {
