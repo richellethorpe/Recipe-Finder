@@ -41,6 +41,7 @@ function printRecipe(recipeObject) {
   let list = document.createElement("li");
   let recipeLink = document.createElement('a');
   recipeLink.setAttribute('href', recipeObject.recipe.url);
+  recipeLink.setAttribute('target','_blank');
   recipeLink.innerHTML = recipeObject.recipe.label;
   list.append(recipeLink);
   results.append(list);
@@ -63,7 +64,7 @@ async function handleForm(event) {
 function addIngredient() {
   let newIngredient = document.querySelector('#ingredientInput').value;
   let currentInventory = JSON.parse(sessionStorage.getItem('inventory'));
-  if (!currentInventory.includes(newIngredient)) {
+  if (!currentInventory.includes(newIngredient) && newIngredient!=='') {
     currentInventory.push(newIngredient);
     sessionStorage.setItem('inventory', JSON.stringify(currentInventory));
   }
