@@ -57,8 +57,8 @@ async function handleForm(event) {
 window.addEventListener('load', function () {
   document.querySelector('form').addEventListener('submit', handleForm);
 
-  const menuButton = document.querySelector('.menubutton')[0];
-  const navLinks = document.querySelector('.navlinks')[0];
+  const menuButton = document.getElementsByClassName('menubutton')[0];
+  const navLinks = document.getElementsByClassName('navlinks')[0];
   menuButton.addEventListener('click', function () {
     navLinks.classList.toggle('active');
   });
