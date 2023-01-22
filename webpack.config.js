@@ -31,18 +31,18 @@ module.exports = {
       template: './src/index.html',
       inject: 'body'
     }),
-    // new HtmlWebpackPlugin({
-    //   template: './src/about.html',
-    //   filename: 'about.html'
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: './src/blog.html',
-    //   filename: 'blog.html'
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: './src/contact.html',
-    //   filename: 'contact.html'
-    // })
+    new HtmlWebpackPlugin({
+      template: './src/about.html',
+      filename: './src/about.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/blog.html',
+      filename: './src/blog.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/contact.html',
+      filename: './src/contact.html'
+    })
   ],
   module: {
     rules: [
