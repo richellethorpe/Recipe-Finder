@@ -26,21 +26,25 @@
     </nav>
 
     <div class="row">
-      <div class="column">
+      <div class="column" id="favorites">
       <h1>Your saved favorites!</h1>
       </div>
 
-      <div class="column" id="postit" >
-      <form class="rotate">
+      <div class="column">
+        <div id="postit" >
+        </div>
+      </div>
+
+      <div class="column">
+        <form id="shoppingInput">
         <label for="shoppingInput">Shopping List:</label>
         <input id="shoppingInput" type="text" name="shoppingInput">
         <br>
         <br>
         <button type="submit" id="submitInput">Add to list!</button>
-      </form>
+        </form>
       </div>
     </div>
   </div>
 </body>
-
 </html>
