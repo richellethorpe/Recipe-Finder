@@ -22,6 +22,18 @@ module.exports = {
       title: 'Shape Tracker',
       template: './src/index.html',
       inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/about.html',
+      filename: 'about.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/blog.html',
+      filename: 'blog.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/contact.html',
+      filename: 'contact.html'
     })
   ],
   module: {

@@ -54,12 +54,15 @@ async function handleForm(event) {
   printAllRecipes(recipeObjectsList);
 }
 
-window.addEventListener('load', function () {
-  document.querySelector('form').addEventListener('submit', handleForm);
-
+const runMenuButton = () => {
   const menuButton = document.getElementsByClassName('menubutton')[0];
   const navLinks = document.getElementsByClassName('navlinks')[0];
   menuButton.addEventListener('click', function () {
     navLinks.classList.toggle('active');
   });
+}
+
+window.addEventListener('load', function () {
+  document.querySelector('form').addEventListener('submit', handleForm);
+  runMenuButton();
 });
