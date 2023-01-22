@@ -4,6 +4,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
+// let pages = ['about', 'blog', 'contact'];
+// let multiPage = pages.map(page => {
+//   return new HtmlWebpackPlugin({
+//     filename: `${page}.html`,
+//     template: `./src/${page}.html`,
+//   })
+// })
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -22,7 +30,19 @@ module.exports = {
       title: 'Shape Tracker',
       template: './src/index.html',
       inject: 'body'
-    })
+    }),
+    // new HtmlWebpackPlugin({
+    //   template: './src/about.html',
+    //   filename: 'about.html'
+    // }),
+    // new HtmlWebpackPlugin({
+    //   template: './src/blog.html',
+    //   filename: 'blog.html'
+    // }),
+    // new HtmlWebpackPlugin({
+    //   template: './src/contact.html',
+    //   filename: 'contact.html'
+    // })
   ],
   module: {
     rules: [
