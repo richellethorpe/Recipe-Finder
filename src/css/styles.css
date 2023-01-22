@@ -1,6 +1,4 @@
-body {
-  background-color: bisque;
-}
+
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -26,7 +24,7 @@ body {
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: #09b996;
   color: white;
 }
 
@@ -36,9 +34,14 @@ body {
 }
 
 .header {
-  padding: 60px;
+  padding: 50px;
   text-align: center;
-  background: #1abc9c;
-  color: white;
-  font-size: 30px;
+  background: #cbf3eb;
+  color: black;
+  font-size: 20px;
+}
+body {
+  font-family: 'Cormorant', serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
 }
