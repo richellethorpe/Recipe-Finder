@@ -30,6 +30,7 @@ function printAllRecipes(recipesListObject) {
 function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
   //Creates clickable image
+  // let newRecipe = document.createElement("div");
   let imgTag = document.createElement("img");
   imgTag.setAttribute("src", recipeObject.recipe.image);
   imgTag.setAttribute("class", 'recipeImg');

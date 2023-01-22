@@ -107,18 +107,25 @@ body {
   }
 }
 
+#showResponse {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
 .recipeImg {
   cursor: pointer;
+  width: 200px;
 }
 
 /* Column design for favorites page */
-.row {
+/* .row {
   display: flex;
 }
 
 .column {
   flex: 50%;
-}
+} */
 
 /* Postit Note styling 
 #postit {
@@ -166,7 +173,7 @@ body {
   background-color: transparent;
   transform: rotate(5deg);
 }*/
-
+/* 
 #postit {
   padding-top: 16px;
   padding-bottom: 16px;
@@ -185,7 +192,7 @@ body {
 }
 
 /* Formats the images within the response section */
-#showResponse img {
+/* #showResponse img {
   height: 350px;
   width: auto;
-}
+} */
