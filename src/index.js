@@ -97,10 +97,20 @@ function refreshInventoryList() {
   });
 }
 
+
+const runMenuButton = () => {
+  const menuButton = document.getElementsByClassName('menubutton')[0];
+  const navLinks = document.getElementsByClassName('navlinks')[0];
+  menuButton.addEventListener('click', function () {
+    navLinks.classList.toggle('active');
+  });
+}
+
 window.addEventListener('load', function () {
   document.querySelector('#inputForm').addEventListener('submit', handleForm);
   document.getElementById('addIngredientButton').addEventListener('click', addIngredient);
   let inventory = [];
   sessionStorage.setItem('inventory', JSON.stringify(inventory));
   printAllRecipes(defaultRecipes);
+  runMenuButton();
 });

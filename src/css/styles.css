@@ -1,36 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+
 body {
-  background-color: bisque;
+  margin: 0;
+  padding: 0;
+  background-color: #F0ECCF;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-}
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
+.navbar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FBC252;
   color: black;
 }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
+.site-title {
+  font-size: 1.5rem;
+  margin: .5rem;
 }
 
-/* Turns the cursor over the recipe images into a pointer */
+
+.navlinks {
+  height: 100%;
+}
+
+.navlinks ul{
+  display: flex;
+  margin: 0%;
+  padding: 0%;
+}
+
+.navlinks li {
+  list-style: none;
+}
+
+.navlinks li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+}
+
+.navlinks li:hover {
+  background-color: #FFB100;
+}
+
+.navlinks a.active {
+  background-color: #FFB100;
+  color: black;
+}
+
+.menubutton {
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 21px;
+}
+
+
+.menubutton .bar {
+  height: 4px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .menubutton {
+    display: flex;
+  }
+
+  .navlinks {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navlinks ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navlinks ul li {
+    text-align: center;
+  }
+
+  .navlinks ul li a {
+    padding: .5rem 1rem;
+  }
+
+  .navlinks.active {
+    display: flex;
+  }
+}
+
 .recipeImg {
   cursor: pointer;
 }
