@@ -41,6 +41,7 @@ function printRecipe(recipeObject) {
   let list = document.createElement("li");
   let recipeLink = document.createElement('a');
   recipeLink.setAttribute('href', recipeObject.recipe.url);
+  recipeLink.setAttribute('target','_blank');
   recipeLink.innerHTML = recipeObject.recipe.label;
   list.append(recipeLink);
   results.append(list);
