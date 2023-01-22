@@ -4,6 +4,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
+let pages = ['favorites'];
+let multiPage = pages.map(page => {
+  return new HtmlWebpackPlugin({
+    filename: `${page}.html`,
+    template: `./src/${page}.html`,
+  })
+})
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -23,7 +30,7 @@ module.exports = {
       template: './src/index.html',
       inject: 'body'
     })
-  ],
+  ].concat(multiPage),
   module: {
     rules: [
       {
