@@ -29,6 +29,7 @@ function printAllRecipes(recipesListObject) {
 //Prints a single recipe
 function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
+  // create a new div with class recipe card
   //Creates clickable image
   let imgTag = document.createElement("img");
   imgTag.setAttribute("src", recipeObject.recipe.image);
