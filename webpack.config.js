@@ -4,23 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
-// let pages = ['about', 'blog', 'contact'];
-// let multiPage = pages.map(page => {
-//   return new HtmlWebpackPlugin({
-//     filename: `${page}.html`,
-//     template: `./src/${page}.html`,
-//   })
-// })
-
-// let pages = ['about', 'blog', 'contact'];
-// let multiPage = pages.map(page => {
-//   return new HtmlWebpackPlugin({
-//     filename: `${page}.html`,
-//     template: `./src/${page}.html`,
-//   })
-// })
-
-let pages = ['favorites'];
+let pages = ['about', 'favorites', 'blog', 'contact'];
 let multiPage = pages.map(page => {
   return new HtmlWebpackPlugin({
     filename: `${page}.html`,
