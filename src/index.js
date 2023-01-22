@@ -54,6 +54,7 @@ async function handleForm(event) {
   printAllRecipes(recipeObjectsList);
 }
 
+
 const runMenuButton = () => {
   const menuButton = document.getElementsByClassName('menubutton')[0];
   const navLinks = document.getElementsByClassName('navlinks')[0];
