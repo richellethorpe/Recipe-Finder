@@ -25,7 +25,7 @@ export default class RecipeFinder {
       const searchObject = new RecipeFinder();
       searchObject.parseForm();
       //Specifies returns of API Call
-      let returnField = ["image", "url", "label"];
+      let returnField = ["image", "url", "label", "healthLabels"];
       let returnFieldQuery = "";
       returnField.forEach(element => {
         returnFieldQuery += `&field=${element}`;
