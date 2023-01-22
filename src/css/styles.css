@@ -39,3 +39,8 @@ body {
 {
     font-size:12px;
 } */
+/* Formats the images within the response section */
+#showResponse img {
+  height: 350px;
+  width: auto;
+}
