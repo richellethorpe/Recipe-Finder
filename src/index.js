@@ -30,14 +30,16 @@ function printAllRecipes(recipesListObject) {
 function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
   //Creates clickable image
-  // let newRecipe = document.createElement("div");
+  let newRecipe = document.createElement("div");
+  newRecipe.setAttribute("class", "newRecipe");
   let imgTag = document.createElement("img");
   imgTag.setAttribute("src", recipeObject.recipe.image);
   imgTag.setAttribute("class", 'recipeImg');
   imgTag.onclick = function () {
     window.open(`${recipeObject.recipe.url}`);
   };
-  results.append(imgTag);
+  //results.append(imgTag);
+  newRecipe.append(imgTag);
   //Creates Link
   let list = document.createElement("li");
   let recipeLink = document.createElement('a');
@@ -45,7 +47,9 @@ function printRecipe(recipeObject) {
   recipeLink.setAttribute('target','_blank');
   recipeLink.innerHTML = recipeObject.recipe.label;
   list.append(recipeLink);
-  results.append(list);
+  //results.append(list);
+  newRecipe.append(list);
+  results.append(newRecipe);
 }
 
 function printError(errorMessage) {
