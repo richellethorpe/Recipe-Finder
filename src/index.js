@@ -1,53 +1,44 @@
 // import 'bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import RecipeFinder from './recipes.js';
+import RecipeFinder from './services/recipes.js';
 
-//Business Logic
-function getURL (food, mealType, healthType){
-  let url;
-  if (mealType.length === 0 && healthType.length === 0){
-     url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&random=true`);
-  }else if(mealType.length > 0 && healthType.length === 0){
-    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&mealType=${mealType}&random=true`);
-  }else if (mealType.length === 0 && healthType.length > 0){
-    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&health=${healthType}&random=true`);
-  }else if (mealType.length > 0 && healthType.length > 0){
-    url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${food}&app_id=d760aafd&app_key=${process.env.API_KEY}&mealType=${mealType}&health=${healthType}&random=true`);
-  }
-  return url
-}
-
-async function getRecipes(newUrl) {
-  const response = await RecipeFinder.getRecipes(newUrl);
+//Returns an array of recipe objects
+async function getRecipes() {
+  const response = await RecipeFinder.getRecipes();
   if (response.hits) {
-    console.log("success!")
-    printRecipes(response);
+    //Array of recipe objects from API call
+    return response.hits;
   } else {
     printError(response);
   }
 }
 
+//From an array of recipes objects, prints all of them
+function printAllRecipes(recipesListObject) {
+  recipesListObject.forEach(element => {
+    printRecipe(element);
+  });
+}
 
-function printRecipes(response){
+//Prints a single recipe
+function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
-  response.hits.forEach(element => {
-    let imgTag = document.createElement("img");
-    imgTag.setAttribute("src", element.recipe.images.SMALL.url);
-    imgTag.setAttribute("class", 'recipeImg');
-    imgTag.onclick = function () {
-      window.location.href = `${element.recipe.url}`;
-    };
-    results.append(imgTag);
-    let list = document.createElement("li");
-    let recipeLink = document.createElement('a');
-    recipeLink.setAttribute('href', element.recipe.url);
-    recipeLink.innerHTML = element.recipe.label;
-    list.append(recipeLink);
-    results.append(list);
-    
-  })
-
+  //Creates clickable image
+  let imgTag = document.createElement("img");
+  imgTag.setAttribute("src", recipeObject.recipe.images.SMALL.url);
+  imgTag.setAttribute("class", 'recipeImg');
+  imgTag.onclick = function () {
+    window.open(`${recipeObject.recipe.url}`);
+  };
+  results.append(imgTag);
+  //Creates Link
+  let list = document.createElement("li");
+  let recipeLink = document.createElement('a');
+  recipeLink.setAttribute('href', recipeObject.recipe.url);
+  recipeLink.innerHTML = recipeObject.recipe.label;
+  list.append(recipeLink);
+  results.append(list);
 }
 
 function printError(errorMessage) {
@@ -55,17 +46,14 @@ function printError(errorMessage) {
   results.append(errorMessage);
 }
 
-function handleForm(event) {
+async function handleForm(event) {
   event.preventDefault();
+  let recipeObjectsList = await getRecipes();
   document.querySelector("#showResponse").innerText = null;
-  const food = document.querySelector('#ingredientInput').value;
-  const mealType = document.querySelector('#mealSelection').value;
-  const healthType = document.querySelector('#healthSelection').value;
-  const newUrl = getURL(food, mealType, healthType)
-  getRecipes(newUrl);
+  document.querySelector('#ingredientInput').value = null;
+  printAllRecipes(recipeObjectsList);
 }
 
 window.addEventListener('load', function () {
   document.querySelector('form').addEventListener('submit', handleForm);
-
 });
