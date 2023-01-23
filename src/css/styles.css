@@ -41,6 +41,7 @@ p {
 .topnav a.active {
   background-color: #09b996;
   color: white;
+}
 .site-title {
   font-size: 1.5rem;
   margin: .5rem;
