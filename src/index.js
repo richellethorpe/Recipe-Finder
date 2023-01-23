@@ -29,6 +29,8 @@ function printAllRecipes(recipesListObject) {
 //Prints a single recipe
 function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
+  let divTag= document.createElement("div");
+  divTag.setAttribute("class", "card");
   //Creates clickable image
   let imgTag = document.createElement("img");
   imgTag.setAttribute("src", recipeObject.recipe.image);
@@ -36,15 +38,17 @@ function printRecipe(recipeObject) {
   imgTag.onclick = function () {
     window.open(`${recipeObject.recipe.url}`);
   };
-  results.append(imgTag);
+  divTag.append(imgTag);
   //Creates Link
-  let list = document.createElement("li");
+  let pTag = document.createElement("p");
   let recipeLink = document.createElement('a');
   recipeLink.setAttribute('href', recipeObject.recipe.url);
   recipeLink.setAttribute('target','_blank');
   recipeLink.innerHTML = recipeObject.recipe.label;
-  list.append(recipeLink);
-  results.append(list);
+  pTag.append(recipeLink);
+  divTag.append(pTag);
+  results.append(divTag);
+  
 }
 
 function printError(errorMessage) {

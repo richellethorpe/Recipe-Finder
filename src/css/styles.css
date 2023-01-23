@@ -1,14 +1,31 @@
 * {
   box-sizing: border-box;
-}
-
-
-body {
   margin: 0;
   padding: 0;
-  background-color: #F0ECCF;
 }
 
+body{
+  width: 100%;
+  min-height: 100vh;
+  line-height: 1.5;
+  
+}
+p {
+  text-align: center;
+}
+
+.container2{
+  width: 300px;
+  max-width: 100%;
+  /* margin: 0 auto; */
+}
+
+.card{
+  flex: 1 1 21rem;
+  margin: 10px 20px;
+  background: #fff;
+  box-shadow: 0 0 15px black;
+}
 
 .navbar {
   display: flex;
