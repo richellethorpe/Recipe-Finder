@@ -19,9 +19,21 @@ module.exports = {
     new ESLintPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Shape Tracker',
+      title: 'Recipe Finder',
       template: './src/index.html',
       inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/about.html',
+      filename: 'about.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/favorites.html',
+      filename: 'favorites.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/contact.html',
+      filename: 'contact.html'
     })
   ],
   module: {
@@ -36,3 +48,4 @@ module.exports = {
     ]
   }
 };
+

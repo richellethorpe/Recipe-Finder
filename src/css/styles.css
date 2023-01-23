@@ -1,24 +1,39 @@
 
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  overflow: hidden;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
+body{
+  width: 100%;
+  min-height: 100vh;
+  line-height: 1.5;
+  
+}
+p {
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
+.container2{
+  width: 300px;
+  max-width: 100%;
+  /* margin: 0 auto; */
+}
+
+.card{
+  flex: 1 1 21rem;
+  margin: 10px 20px;
+  background: #fff;
+  box-shadow: 0 0 15px black;
+}
+
+.navbar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FBC252;
   color: black;
 }
 
@@ -26,26 +41,173 @@
 .topnav a.active {
   background-color: #09b996;
   color: white;
+.site-title {
+  font-size: 1.5rem;
+  margin: .5rem;
 }
 
-/* Turns the cursor over the recipe images into a pointer */
+
+.navlinks {
+  height: 100%;
+}
+
+.navlinks ul{
+  display: flex;
+  margin: 0%;
+  padding: 0%;
+}
+
+.navlinks li {
+  list-style: none;
+}
+
+.navlinks li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+}
+
+.navlinks li:hover {
+  background-color: #FFB100;
+}
+
+.navlinks a.active {
+  background-color: #FFB100;
+  color: black;
+}
+
+.menubutton {
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 21px;
+}
+
+
+.menubutton .bar {
+  height: 4px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .menubutton {
+    display: flex;
+  }
+
+  .navlinks {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navlinks ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navlinks ul li {
+    text-align: center;
+  }
+
+  .navlinks ul li a {
+    padding: .5rem 1rem;
+  }
+
+  .navlinks.active {
+    display: flex;
+  }
+}
+
 .recipeImg {
   cursor: pointer;
 }
 
-.header {
-  padding: 50px;
+/* Column design for favorites page */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+/* Postit Note styling 
+#postit {
+  line-height: 1;
   text-align: center;
-  background: #cbf3eb;
-  color: black;
-  font-size: 20px;
+  margin: 25px;
+  width: 250px;
+  min-height: 250px;
+  max-height: 250px;
+  padding-top: 35px;
+  position: relative;
+  border: 1px solid #e8e8e8;
+  border-top: 30px solid #fdfd86;
+  font-family: 'Reenie Beanie';
+  font-size: 22px;
+  border-bottom-right-radius: 60px 5px;
+  display: inline-block;
+  background: #ffff88; /*Old browsers */
+  /*background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
+  /*background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffff88), color-stop(82%,#ffff88), color-stop(82%,#ffff88), color-stop(100%,#ffffc6)); /* Chrome,Safari4+ */
+  /*background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
+  /*background: -o-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Opera 11.10+ */
+  /*background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
+  /*background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='ffffc6', GradientType=1 );
 }
-body {
-  font-family: 'Cormorant', serif;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+
+#postit:after {
+  content: "";
+  position:absolute;
+  z-index:-1;
+  right:-0px; bottom:20px;
+  width:200px;
+  height: 25px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
+  -moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  transform: matrix(-1, -0.1, 0, 1, 0, 0);
 }
-/* input[type="text"]
-{
-    font-size:12px;
-} */
+
+.rotate {
+  background-color: transparent;
+  transform: rotate(5deg);
+}*/
+
+#postit {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: rgb(227, 255, 204);
+  box-shadow: 0px 2px 2px 3px #dadada;
+  -webkit-transform: rotate(-4deg);
+  -o-transform: rotate(-4deg);
+  -moz-transform: rotate(-4deg);
+  max-width: 240px;
+  height: 240px;
+  position: relative;
+  right: 28%;
+  text-align: center;
+}
+
+/* Formats the images within the response section */
+#showResponse img {
+  height: 350px;
+  width: auto;
+}
