@@ -144,6 +144,7 @@ body {
 
 .welcome {
   text-align: center;
+  font-family: Silkscreen;
 }
 
 .filters {
@@ -151,12 +152,15 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
+  font-family: Silkscreen;
+  font-size: 14px;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: Silkscreen;
 }
 
 #addIngredientButton {
