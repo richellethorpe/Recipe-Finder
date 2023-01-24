@@ -143,6 +143,7 @@ const runMenuButton = () => {
 window.addEventListener('load', function () {
   document.querySelector('#inputForm').addEventListener('submit', handleForm);
   document.getElementById('addIngredientButton').addEventListener('click', addIngredient);
+  //document.getElementById('ingredientInput').addEventListener('keypress', addIngredient);
   let inventory = [];
   sessionStorage.setItem('inventory', JSON.stringify(inventory));
   printAllRecipes(defaultRecipes);
