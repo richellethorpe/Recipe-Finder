@@ -88,6 +88,8 @@ function addIngredient() {
   if (!currentInventory.includes(newIngredient) && newIngredient !== '') {
     currentInventory.push(newIngredient);
     sessionStorage.setItem('inventory', JSON.stringify(currentInventory));
+    let submitButton = document.getElementById("submitForm");
+    submitButton.disabled = false;
   }
   refreshInventoryList();
   document.querySelector('#ingredientInput').value = null;
@@ -114,6 +116,10 @@ function refreshInventoryList() {
       let currentInventory = JSON.parse(sessionStorage.getItem('inventory'));
       currentInventory = currentInventory.filter(item => item !== element);
       sessionStorage.setItem('inventory', JSON.stringify(currentInventory));
+      if (currentInventory.length == 0) {
+        let submitButton = document.getElementById("submitForm");
+        submitButton.disabled = true;
+      }
     });
     ingredient.append(deleteButton);
     ul.append(ingredient);
@@ -194,6 +200,8 @@ window.addEventListener('load', function () {
       //document.getElementById('ingredientInput').addEventListener('keypress', addIngredient);
       let inventory = [];
       sessionStorage.setItem('inventory', JSON.stringify(inventory));
+      let submitButton = document.getElementById("submitForm");
+      submitButton.disabled = true;
     }
     let currentInventory = JSON.parse(sessionStorage.getItem('inventory'));
     if (currentInventory.length > 0) {
