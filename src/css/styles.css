@@ -181,8 +181,15 @@ body {
 #listOfIngredients button {
   margin-left: .5rem;
   margin-right: 2rem;
+  
 }
-
+input.option{
+  text-align: center;
+}
+.option{
+  width: 200px;
+  height: 25px;
+}
 #showResponse {
   display: flex;
   align-items: flex-start;
@@ -223,6 +230,15 @@ p {
   /* box-shadow: 0 0 15px black; */
 }
 
+.top {
+  border: 2px solid black;
+  border-radius: 2px;
+}
+/* .#submitForm button{
+  display: flex;
+  align-items: center;
+} */
+
 
 /* Column design for favorites page */
 /* .row {
@@ -233,7 +249,11 @@ p {
   flex: 50%;
 } */
 
-/* Postit Note styling 
+#favorites {
+  text-align: center;
+}
+
+/* Postit Note styling */
 #postit {
   line-height: 1;
   text-align: center;
@@ -250,14 +270,14 @@ p {
   border-bottom-right-radius: 60px 5px;
   display: inline-block;
   background: #ffff88; /*Old browsers */
-  /*background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
-  /*background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffff88), color-stop(82%,#ffff88), color-stop(82%,#ffff88), color-stop(100%,#ffffc6)); /* Chrome,Safari4+ */
-  /*background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
-  /*background: -o-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Opera 11.10+ */
-  /*background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
-  /*background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
-  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='ffffc6', GradientType=1 );
-}
+  background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffff88), color-stop(82%,#ffff88), color-stop(82%,#ffff88), color-stop(100%,#ffffc6)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
+  background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='ffffc6', GradientType=1 );
+} 
 
 #postit:after {
   content: "";
@@ -273,12 +293,18 @@ p {
   -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
   -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
   transform: matrix(-1, -0.1, 0, 1, 0, 0);
+} 
+
+#shoppingInput {
+  text-align: justify;
+  position: absolute;
+  margin-left: 50%;
 }
 
 .rotate {
   background-color: transparent;
   transform: rotate(5deg);
-}*/
+}
 /* 
 #postit {
   padding-top: 16px;
@@ -295,10 +321,12 @@ p {
   position: relative;
   right: 28%;
   text-align: center;
+  margin: center;
+  display: center;
 }
 
-/* Formats the images within the response section */
-/* #showResponse img {
-  height: 350px;
-  width: auto;
-} */
+/* display: flex;
+align-items: flex-start;
+flex-wrap: wrap;
+justify-content: space-between;
+flex-basis: 30%; */
