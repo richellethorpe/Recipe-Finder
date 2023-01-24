@@ -148,7 +148,7 @@ body {
   background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
   background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='ffffc6', GradientType=1 );
-}
+} 
 
 #postit:after {
   content: "";
@@ -164,7 +164,7 @@ body {
   -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
   -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
   transform: matrix(-1, -0.1, 0, 1, 0, 0);
-}
+} 
 
 #shoppingInput {
   text-align: justify;
@@ -177,3 +177,9 @@ body {
   margin: center;
   display: center;
 }
+
+/* display: flex;
+align-items: flex-start;
+flex-wrap: wrap;
+justify-content: space-between;
+flex-basis: 30%; */
