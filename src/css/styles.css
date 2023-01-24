@@ -137,8 +137,15 @@ body {
 #listOfIngredients button {
   margin-left: .5rem;
   margin-right: 2rem;
+  
 }
-
+input.option{
+  text-align: center;
+}
+.option{
+  width: 200px;
+  height: 25px;
+}
 #showResponse {
   display: flex;
   align-items: flex-start;
