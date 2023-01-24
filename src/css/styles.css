@@ -45,11 +45,72 @@ body {
 
 .site-title {
   display: inline-flex;
-  font-size: 7rem;
+  font-size: 8rem;
   margin: 0 auto;
   font-family: Nabla;
+  opacity: 75%;
+  border-radius: 20px;
 }
 
+
+
+#g { 
+  opacity: 75%;
+  animation: flickerG 2s linear 1s;
+}
+#g::after {
+	content: '';
+	width: 150%;
+	-webkit-box-shadow: 0px 0px 60px 8px rgb(0, 128, 0);
+	-moz-box-shadow: 0px 0px 60px 8px rgb(0, 128, 0);
+	box-shadow: -35px 0px 60px 8px rgb(0, 128, 0);
+}
+
+@keyframes flickerG {
+	0% {
+		opacity: .75;
+	}
+	5% {
+		opacity: 0.5;
+	}
+	10% {
+		opacity: 0.6;
+	}
+	15% {
+		opacity: 0.85;
+	}
+	25% {
+		opacity: 0.5;
+	}
+	30% {
+		opacity: 1;
+	}
+	35% {
+		opacity: 0.1;
+	}
+	40% {
+		opacity: 0.25;
+	}
+	45% {
+		opacity: 0.5;
+	}
+	60% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 0.85;
+	}
+	80% {
+		opacity: 0.4;
+	}
+	90% {
+		opacity: 0.5;
+	}
+  100%{
+    opacity: .75;
+  }
+	
+}
 
 .navlinks {
   height: 100%;
