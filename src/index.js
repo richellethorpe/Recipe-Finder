@@ -2,7 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import RecipeFinder from './services/recipes.js';
-import { defaultRecipes, favoriteRecipes } from './services/default_recipes.js';
+import { defaultRecipes } from './services/default_recipes.js';
 
 //Business Logic
 
@@ -28,7 +28,7 @@ function printAllRecipes(recipesListObject) {
 
 function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
-  let divTag= document.createElement("div");
+  let divTag = document.createElement("div");
   divTag.setAttribute("class", "card");
   //Creates clickable image
   let imgTag = document.createElement("img");
@@ -47,18 +47,18 @@ function printRecipe(recipeObject) {
   pTag.append(recipeLink);
   divTag.append(pTag);
   results.append(divTag);
-  
+
 
   //Creates Favorite Button
   let favoriteButton = document.createElement('button');
-  favoriteButton.type= 'button';
+  favoriteButton.type = 'button';
   favoriteButton.innerHTML = 'Add to Favorites';
   favoriteButton.onclick = function () {
     let currentFavorites = JSON.parse(sessionStorage.getItem('favorites'));
-    if (!currentFavorites.some(e => e.recipe.label === recipeObject.recipe.label)){
-    currentFavorites.push(recipeObject);
-    sessionStorage.setItem('favorites', JSON.stringify(currentFavorites));
-    favoriteButton.remove();
+    if (!currentFavorites.some(e => e.recipe.label === recipeObject.recipe.label)) {
+      currentFavorites.push(recipeObject);
+      sessionStorage.setItem('favorites', JSON.stringify(currentFavorites));
+      favoriteButton.remove();
     }
   };
   divTag.append(favoriteButton);
@@ -79,9 +79,6 @@ async function handleForm(event) {
   printAllRecipes(recipeObjectsList);
 }
 
-function appendHealthTag() {
-
-}
 //Adds Ingredient from the input form to the session storage inventory
 function addIngredient() {
   let newIngredient = document.querySelector('#ingredientInput').value;
@@ -159,13 +156,13 @@ function refreshShoppingList() {
   });
 }
 
-  function clearList() {
-    if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
-      let inventory = [];
-      sessionStorage.setItem('inventory', JSON.stringify(inventory));
-      refreshInventoryList();
-      document.querySelector('#ingredientInput').value = null;
-    } else if (window.location.pathname == '/favorites.html') {
+function clearList() {
+  if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
+    let inventory = [];
+    sessionStorage.setItem('inventory', JSON.stringify(inventory));
+    refreshInventoryList();
+    document.querySelector('#ingredientInput').value = null;
+  } else if (window.location.pathname == '/favorites.html') {
     let shoppingList = [];
     sessionStorage.setItem('shoppingList', JSON.stringify(shoppingList));
     refreshShoppingList();
@@ -180,22 +177,20 @@ const runMenuButton = () => {
   menuButton.addEventListener('click', function () {
     navLinks.classList.toggle('active');
   });
-}
+};
 
 window.addEventListener('load', function () {
-
-  console.log(sessionStorage);
   if (!this.sessionStorage.getItem('favorites')) {
     let favorites = [];
     sessionStorage.setItem('favorites', JSON.stringify(favorites));
   }
   if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
-      document.querySelector('#inputForm').addEventListener('submit', handleForm);
-      document.getElementById('addIngredientButton').addEventListener('click', addIngredient);
-      document.getElementById('clearButton').addEventListener('click', clearList);
+    document.querySelector('#inputForm').addEventListener('submit', handleForm);
+    document.getElementById('addIngredientButton').addEventListener('click', addIngredient);
+    document.getElementById('clearButton').addEventListener('click', clearList);
     if (!this.sessionStorage.getItem('inventory')) {
       //document.getElementById('ingredientInput').addEventListener('keypress', addIngredient);
-  let inventory = [];
+      let inventory = [];
       sessionStorage.setItem('inventory', JSON.stringify(inventory));
     }
     let currentInventory = JSON.parse(sessionStorage.getItem('inventory'));
@@ -203,7 +198,7 @@ window.addEventListener('load', function () {
       refreshInventoryList();
     }
     runMenuButton();
-
+    printAllRecipes(defaultRecipes);
   } else if (window.location.pathname == '/favorites.html') {
     document.getElementById('submitInput').addEventListener('click', addShoppingIngredient);
     document.getElementById('clearInput').addEventListener('click', clearList);
@@ -215,8 +210,8 @@ window.addEventListener('load', function () {
     if (currentShoppingList.length > 0) {
       refreshShoppingList();
     }
-    
     runMenuButton();
+    let favoriteRecipes = JSON.parse(sessionStorage.getItem('favorites'));
+    printAllRecipes(favoriteRecipes);
   }
-  printAllRecipes(defaultRecipes);
 });

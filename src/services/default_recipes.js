@@ -51,7 +51,7 @@ export const defaultRecipes = [
 ];
 
 //Contains an array of the favorite recipes to be shown on the home page prior to search
-export const favoriteRecipes = [
+export const staffRecipes = [
   {
     "name": "Geoffrey",
     "recipe": {
