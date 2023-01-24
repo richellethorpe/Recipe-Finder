@@ -50,19 +50,21 @@ function printRecipe(recipeObject) {
 
 
   //Creates Favorite Button
-  let favoriteButton = document.createElement('button');
-  favoriteButton.type = 'button';
-  favoriteButton.innerHTML = 'Add to Favorites';
-  favoriteButton.onclick = function () {
-    let currentFavorites = JSON.parse(sessionStorage.getItem('favorites'));
-    if (!currentFavorites.some(e => e.recipe.label === recipeObject.recipe.label)) {
-      currentFavorites.push(recipeObject);
-      sessionStorage.setItem('favorites', JSON.stringify(currentFavorites));
-      favoriteButton.remove();
-    }
-  };
-  divTag.append(favoriteButton);
-  results.append(divTag);
+  if (window.location.pathname !== '/favorites.html') {
+    let favoriteButton = document.createElement('button');
+    favoriteButton.type = 'button';
+    favoriteButton.innerHTML = 'Add to Favorites';
+    favoriteButton.onclick = function () {
+      let currentFavorites = JSON.parse(sessionStorage.getItem('favorites'));
+      if (!currentFavorites.some(e => e.recipe.label === recipeObject.recipe.label)) {
+        currentFavorites.push(recipeObject);
+        sessionStorage.setItem('favorites', JSON.stringify(currentFavorites));
+        favoriteButton.remove();
+      }
+    };
+    divTag.append(favoriteButton);
+    results.append(divTag);
+  }
 }
 
 function printError(errorMessage) {
