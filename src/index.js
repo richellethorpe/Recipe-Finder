@@ -27,29 +27,53 @@ function printAllRecipes(recipesListObject) {
 //UI Logic
 
 //Prints a single recipe
+// function printRecipe(recipeObject) {
+//   let results = document.querySelector("#showResponse");
+//   //Creates clickable image
+//   let newRecipe = document.createElement("div");
+//   newRecipe.setAttribute("class", "newRecipe");
+//   let imgTag = document.createElement("img");
+//   imgTag.setAttribute("src", recipeObject.recipe.image);
+//   imgTag.setAttribute("class", 'recipeImg');
+//   imgTag.onclick = function () {
+//     window.open(`${recipeObject.recipe.url}`);
+//   };
+//   //results.append(imgTag);
+//   newRecipe.append(imgTag);
+//   //Creates Link
+//   let list = document.createElement("li");
+//   let recipeLink = document.createElement('a');
+//   recipeLink.setAttribute('href', recipeObject.recipe.url);
+//   recipeLink.setAttribute('target','_blank');
+//   recipeLink.innerHTML = recipeObject.recipe.label;
+//   list.append(recipeLink);
+//   //results.append(list);
+//   newRecipe.append(list);
+//   results.append(newRecipe);
+// }
+
 function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
+  let divTag= document.createElement("div");
+  divTag.setAttribute("class", "card");
   //Creates clickable image
-  let newRecipe = document.createElement("div");
-  newRecipe.setAttribute("class", "newRecipe");
   let imgTag = document.createElement("img");
   imgTag.setAttribute("src", recipeObject.recipe.image);
   imgTag.setAttribute("class", 'recipeImg');
   imgTag.onclick = function () {
     window.open(`${recipeObject.recipe.url}`);
   };
-  //results.append(imgTag);
-  newRecipe.append(imgTag);
+  divTag.append(imgTag);
   //Creates Link
-  let list = document.createElement("li");
+  let pTag = document.createElement("p");
   let recipeLink = document.createElement('a');
   recipeLink.setAttribute('href', recipeObject.recipe.url);
   recipeLink.setAttribute('target','_blank');
   recipeLink.innerHTML = recipeObject.recipe.label;
-  list.append(recipeLink);
-  //results.append(list);
-  newRecipe.append(list);
-  results.append(newRecipe);
+  pTag.append(recipeLink);
+  divTag.append(pTag);
+  results.append(divTag);
+  
 }
 
 function printError(errorMessage) {
