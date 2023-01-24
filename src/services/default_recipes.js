@@ -49,6 +49,27 @@ export const defaultRecipes = [
       "label": "Vegan Bolognese with Mushrooms & Red Lentils"
     }
   },
+  // {
+  //   "recipe": {
+  //     "image": "https://minimalistbaker.com/wp-content/uploads/2022/11/Vegan-Lentil-Bolognese-8-1024x1536.jpg",
+  //     "url": "https://minimalistbaker.com/vegan-bolognese-with-mushrooms-red-lentils/",
+  //     "label": "Vegan Bolognese with Mushrooms & Red Lentils"
+  //   }
+  // },
+  // {
+  //   "recipe": {
+  //     "image": "https://minimalistbaker.com/wp-content/uploads/2022/11/Vegan-Lentil-Bolognese-8-1024x1536.jpg",
+  //     "url": "https://minimalistbaker.com/vegan-bolognese-with-mushrooms-red-lentils/",
+  //     "label": "Vegan Bolognese with Mushrooms & Red Lentils"
+  //   }
+  // },
+  // {
+  //   "recipe": {
+  //     "image": "https://minimalistbaker.com/wp-content/uploads/2022/11/Vegan-Lentil-Bolognese-8-1024x1536.jpg",
+  //     "url": "https://minimalistbaker.com/vegan-bolognese-with-mushrooms-red-lentils/",
+  //     "label": "Vegan Bolognese with Mushrooms & Red Lentils"
+  //   }
+  // },
 ];
 
 //Contains an array of the favorite recipes to be shown on the home page prior to search
