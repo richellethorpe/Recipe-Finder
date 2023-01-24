@@ -45,6 +45,7 @@ function printRecipe(recipeObject) {
   recipeLink.innerHTML = recipeObject.recipe.label;
   list.append(recipeLink);
   results.append(list);
+
 }
 
 function printError(errorMessage) {
@@ -60,6 +61,9 @@ async function handleForm(event) {
   printAllRecipes(recipeObjectsList);
 }
 
+function appendHealthTag() {
+
+}
 //Adds Ingredient from the input form to the session storage inventory
 function addIngredient() {
   let newIngredient = document.querySelector('#ingredientInput').value;
@@ -86,6 +90,7 @@ function refreshInventoryList() {
     let deleteButton = document.createElement('button');
     deleteButton.type = 'button';
     deleteButton.innerHTML = 'X';
+    deleteButton.setAttribute("id", 'buttonSize');
     //Creates delete button, which, if clicked, removes the item from the list and the sessionStorage
     deleteButton.addEventListener("click", function () {
       ingredient.remove();

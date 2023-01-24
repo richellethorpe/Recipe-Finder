@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Fredoka+One&family=Homemade+Apple&family=Hurricane&family=Meddon&family=Nabla&family=Righteous&family=Silkscreen&family=Yatra+One&display=swap');
+
+
 * {
   box-sizing: border-box;
 }
@@ -9,19 +12,43 @@ body {
   background-color: #F0ECCF;
 }
 
+#formdiv {
+  font-family: 'Silkscreen', cursive;
+}
+
+#subtitle {
+  font-weight: 700;
+
+}
+
+#listOfIngredients {
+  font-family: Hurricane;
+  font-size: 30px;
+}
+
+#buttonSize {
+  font-size: 15px
+}
 
 .navbar {
   display: flex;
   position: relative;
   justify-content: space-between;
   align-items: center;
-  background-color: #FBC252;
+  background-color:green;
   color: black;
+  border-radius: 23%;
+  font-family: Silkscreen;
+  
 }
 
 .site-title {
-  font-size: 1.5rem;
-  margin: .5rem;
+  display: inline-flex;
+  font-size: 7rem;
+  margin: 0 auto;
+  font-family: Nabla;
+  
+
 }
 
 
@@ -33,6 +60,7 @@ body {
   display: flex;
   margin: 0%;
   padding: 0%;
+  border-radius: 10%;
 }
 
 .navlinks li {
@@ -48,11 +76,13 @@ body {
 
 .navlinks li:hover {
   background-color: #FFB100;
+  border-radius: 20%;
 }
 
 .navlinks a.active {
   background-color: #FFB100;
   color: black;
+  border-radius: 20%;
 }
 
 .menubutton {
