@@ -178,6 +178,15 @@ p {
   box-shadow: 0 0 15px black;
 }
 
+.top {
+  border: 2px solid black;
+  border-radius: 2px;
+}
+.#submitForm button{
+  display: flex;
+  align-items: center;
+}
+
 
 /* Column design for favorites page */
 /* .row {

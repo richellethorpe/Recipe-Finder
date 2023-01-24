@@ -37,6 +37,7 @@
           <input id="ingredientInput" type="text" name="ingredientInput">
           <button type="button" id="addIngredientButton">Add Ingredient</button>
         </div>
+        <hr class="top">
       
         <div>
           <ul id="listOfIngredients"></ul>
@@ -56,7 +57,6 @@
             <label for="health">Select health consideration:</label>
             <select name="health" id="health">
               <option></option>
-              <option value="">Health Option</option>
               <option value="vegetarian">Vegetarian</option>
               <option value="vegan">Vegan</option>
               <option value="pescatarian">Pescatarian</option>
@@ -64,17 +64,19 @@
           </div>
           <div class="menu">
             <label for="cookTime">Enter a MAX prep-time:</label>
-            <input id="cookTime" type="number" min=0 name="cookTime">
+            <input id="cookTime" type="number" min=0 name="cookTime" >
           </div>
           <div class="menu">
             <label for="excluded">Enter ingredients you wish to exclude:</label>
-            <input id="excluded" type="text" name="excluded">
+            <input id="excluded" type="text" name="excluded" >
           </div>
         </div>
-        <div>
+        <hr class="top">
+        <div class="menu">
           <button type="submit" id="submitForm">Find Recipe</button>
         </div>
       </form>
+      
 
       <div class="container2" id="showResponse"></div>
 
