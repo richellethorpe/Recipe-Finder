@@ -137,18 +137,72 @@ body {
   }
 }
 
-.recipeImg {
-  cursor: pointer;
+.welcome {
+  text-align: center;
 }
 
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#addIngredientButton {
+  margin: 1rem;
+}
+
+#listOfIngredients {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+#listOfIngredients button {
+  margin-left: .5rem;
+  margin-right: 2rem;
+}
+
+#showResponse {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-basis: 30%;
+}
+
+#showResponse li {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  overflow: hidden;
+}
+
+.recipeImg {
+  cursor: pointer;
+  width: 300px;
+  border: black;
+  border-style: solid;
+  border-width: 3px;
+}
+
+
 /* Column design for favorites page */
-.row {
+/* .row {
   display: flex;
 }
 
 .column {
   flex: 50%;
-}
+} */
 
 /* Postit Note styling 
 #postit {
@@ -196,7 +250,7 @@ body {
   background-color: transparent;
   transform: rotate(5deg);
 }*/
-
+/* 
 #postit {
   padding-top: 16px;
   padding-bottom: 16px;
@@ -215,7 +269,7 @@ body {
 }
 
 /* Formats the images within the response section */
-#showResponse img {
+/* #showResponse img {
   height: 350px;
   width: auto;
-}
+} */
