@@ -21,7 +21,6 @@ body {
   font-weight: 600;
   padding-left: 150px;
   font-size: 22px;
-
 }
 
 #listOfIngredients {
@@ -42,7 +41,6 @@ body {
   color: black;
   border-radius: 23%;
   font-family: Silkscreen;
-  
 }
 
 .site-title {
@@ -204,6 +202,11 @@ body {
   font-family: Silkscreen;
 }
 
+#ingredientInput {
+  width: 400px;
+  height: 40px;
+}
+
 .filters {
   display: flex;
   align-items: center;
@@ -219,6 +222,12 @@ body {
   align-items: center;
   font-family: Silkscreen;
 }
+
+.option {
+  width: 225px;
+  height: 30px;
+}
+
 
 #addIngredientButton {
   margin: 1rem;
@@ -270,9 +279,9 @@ p {
   margin: 10px 20px;
   background: #fff;
   border: black;
-  /* border-style: solid; */
+  border-style: solid;
   border-width: 3px;
-  box-shadow: 0 0 15px black;
+  /* box-shadow: 0 0 15px black; */
 }
 
 

@@ -29,7 +29,7 @@
       </nav>
 
       <div class="welcome">
-        <h1> Welcome to the pantry!</h1>
+        <!-- <h1> Welcome to the pantry!</h1> -->
       </div>
       
       <form id="inputForm">
@@ -46,8 +46,8 @@
         <div class="filters">
           <div class="menu">
             <label for="mealSelection">Select type of meal:</label>
-            <select name="mealSelection" id="mealSelection">
-              <option value=""></option>
+            <select name="mealSelection" id="mealSelection" class="option">
+              <option value="">Any</option>
               <option value="dinner">Dinner</option>
               <option value="lunch">Lunch</option>
               <option value="breakfast">Breakfast</option>
@@ -55,7 +55,7 @@
           </div>
           <div class="menu">
             <label for="health">Select health consideration:</label>
-            <select name="health" id="health">
+            <select name="health" id="health" class="option">
               <option></option>
               <option value="" selected>Health Option</option>
               <option value="vegetarian">Vegetarian</option>
@@ -65,11 +65,11 @@
           </div>
           <div class="menu">
             <label for="cookTime">Enter a MAX prep-time:</label>
-            <input id="cookTime" type="number" min=0 name="cookTime">
+            <input id="cookTime" type="number" min=0 name="cookTime" class="option">
           </div>
           <div class="menu">
             <label for="excluded">Enter ingredients you wish to exclude:</label>
-            <input id="excluded" type="text" name="excluded">
+            <input id="excluded" type="text" name="excluded" class="option">
           </div>
         </div>
         <div>
