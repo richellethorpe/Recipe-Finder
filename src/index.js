@@ -61,8 +61,8 @@ function printRecipe(recipeObject) {
     favoriteButton.remove();
     }
   };
-  pTag.append(favoriteButton);
-  results.append(pTag);
+  divTag.append(favoriteButton);
+  results.append(divTag);
 }
 
 function printError(errorMessage) {
@@ -179,6 +179,7 @@ const runMenuButton = () => {
 }
 
 window.addEventListener('load', function () {
+
   console.log(sessionStorage);
   if (!this.sessionStorage.getItem('favorites')) {
     let favorites = [];
@@ -209,6 +210,8 @@ window.addEventListener('load', function () {
     if (currentShoppingList.length > 0) {
       refreshShoppingList();
     }
+    
     runMenuButton();
   }
+  printAllRecipes(defaultRecipes);
 });
