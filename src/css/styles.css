@@ -67,7 +67,7 @@ h1 {
   display: inline-flex;
   align-items: left;
   opacity: 75%;
-  animation: flickerG 2s linear 3s;
+  animation: flickerG 3s linear 1s reverse ;
 }
 #g::after {
 	content: '';
@@ -79,20 +79,38 @@ h1 {
 
 @keyframes flickerG {
 	0% {
-		opacity: .75;
+		opacity: 0.5;
 	}
+  3% {
+    opacity: 0
+  }
 	5% {
 		opacity: 0.5;
 	}
+  7% {
+    opacity: 0;
+  }
+  9% { 
+    opacity: 0.7;
+  }
 	10% {
 		opacity: 0.6;
 	}
+  13% {
+    opacity: 0
+  }
 	15% {
 		opacity: 0.85;
 	}
+  18% {
+    opacity: 0
+  }
 	25% {
 		opacity: 0.5;
 	}
+  27% {
+    opacity: 0
+  }
 	30% {
 		opacity: 1;
 	}
@@ -102,6 +120,9 @@ h1 {
 	40% {
 		opacity: 0.25;
 	}
+  42% {
+    opacity: 0
+  }
 	45% {
 		opacity: 0.5;
 	}
@@ -117,6 +138,9 @@ h1 {
 	90% {
 		opacity: 0.5;
 	}
+  95% {
+    opacity: 0;
+  }
   100%{
     opacity: .75;
   }
