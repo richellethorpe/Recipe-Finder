@@ -32,8 +32,15 @@ body {
   font-size: 15px
 }
 
+.site-title {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
 .navbar {
   display: flex;
+  padding-right: 45px;
   position: relative;
   justify-content: space-between;
   align-items: center;
@@ -43,9 +50,9 @@ body {
   font-family: Silkscreen;
 }
 
-.site-title {
+h1 {
   display: inline-flex;
-  font-size: 8rem;
+  font-size: 9rem;
   margin: 0 auto;
   font-family: Nabla;
   opacity: 75%;
@@ -54,9 +61,11 @@ body {
 
 
 
-#g { 
+.g { 
+  display: inline-flex;
+  align-items: left;
   opacity: 75%;
-  animation: flickerG 2s linear 1s;
+  animation: flickerG 2s linear 3s;
 }
 #g::after {
 	content: '';
