@@ -218,9 +218,9 @@ p {
   margin: 10px 20px;
   background: #fff;
   border: black;
-  /* border-style: solid; */
+  border-style: solid;
   border-width: 3px;
-  box-shadow: 0 0 15px black;
+  /* box-shadow: 0 0 15px black; */
 }
 
 
