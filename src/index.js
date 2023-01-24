@@ -32,6 +32,8 @@ function printRecipe(recipeObject) {
   let divTag= document.createElement("div");
   divTag.setAttribute("class", "card");
   //Creates clickable image
+  let newRecipe = document.createElement("div");
+  newRecipe.setAttribute("class", "newRecipe");
   let imgTag = document.createElement("img");
   imgTag.setAttribute("src", recipeObject.recipe.image);
   imgTag.setAttribute("class", 'recipeImg');
