@@ -41,6 +41,8 @@ body {
 .navbar {
   display: flex;
   padding-right: 45px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   position: relative;
   justify-content: space-between;
   align-items: center;
