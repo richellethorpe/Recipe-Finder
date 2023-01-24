@@ -40,7 +40,9 @@
           <label for="ingredientInput">Input ingredients you wish to use:</label>
           <input id="ingredientInput" type="text" name="ingredientInput">
           <button type="button" id="addIngredientButton">Add Ingredient</button>
+          <button type="button" id="clearButton">Clear Ingredients</button>
         </div>
+        <hr class="top">
       
         <div>
           <ul id="listOfIngredients"></ul>
@@ -49,8 +51,8 @@
         <div class="filters">
           <div class="menu">
             <label for="mealSelection">Select type of meal:</label>
-            <select name="mealSelection" id="mealSelection" class="option">
-              <option value="">Any</option>
+            <select name="mealSelection" id="mealSelection" class="option" class="option">
+              <option value="">AnyAny</option>
               <option value="dinner">Dinner</option>
               <option value="lunch">Lunch</option>
               <option value="breakfast">Breakfast</option>
@@ -68,17 +70,19 @@
           </div>
           <div class="menu">
             <label for="cookTime">Enter a MAX prep-time:</label>
-            <input id="cookTime" type="number" min=0 name="cookTime" class="option">
+            <input id="cookTime" type="number" min=0 name="cookTime" placeholder="minutes" class="option">
           </div>
           <div class="menu">
             <label for="excluded">Enter ingredients you wish to exclude:</label>
-            <input id="excluded" type="text" name="excluded" class="option">
+            <input id="excluded" type="text" name="excluded" placeholder="none" class="option">
           </div>
         </div>
-        <div>
+        <hr class="top">
+        <div class="menu">
           <button type="submit" id="submitForm">Find Recipe</button>
         </div>
       </form>
+      
 
       <div class="container2" id="showResponse"></div>
 
