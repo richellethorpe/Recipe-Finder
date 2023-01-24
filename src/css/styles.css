@@ -189,9 +189,24 @@ body {
 .recipeImg {
   cursor: pointer;
   width: 300px;
-  border: black;
+  /* border: black;
   border-style: solid;
+  border-width: 3px; */
+}
+
+p {
+  text-align: center;
+}
+
+.card{
+  /* flex: 1 1 21rem; */
+  width: 300px;
+  margin: 10px 20px;
+  background: #fff;
+  border: black;
+  /* border-style: solid; */
   border-width: 3px;
+  box-shadow: 0 0 15px black;
 }
 
 
