@@ -231,7 +231,7 @@ window.addEventListener('load', function () {
   if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
     document.querySelector('#inputForm').addEventListener('submit', handleForm);
     document.getElementById('addIngredientButton').addEventListener('click', addIngredient);
-    // add 'enter key' as a method to submit ingredient input
+    // add 'enter' key as a method to submit ingredient input
     document.getElementById('ingredientInput').addEventListener("keypress", function(event) {
       if (event.key === "Enter") {
         event.preventDefault();
@@ -255,6 +255,13 @@ window.addEventListener('load', function () {
     //Sets up listener for favorites page items
   } else if (window.location.pathname == '/favorites.html') {
     document.getElementById('submitInput').addEventListener('click', addShoppingIngredient);
+    // add 'enter' key as method to add item to shopping list
+    document.getElementById('shoppingInputText').addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById('submitInput').click();
+      }
+    });
     document.getElementById('clearInput').addEventListener('click', clearList);
     if (!this.sessionStorage.getItem('shoppingList')) {
       let shoppingList = [];
