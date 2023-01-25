@@ -30,7 +30,7 @@ export default class RecipeFinder {
       });
 
 
-      let ingredients, mealType, health, cookTime, excluded;
+      let ingredients, mealType, health, cookTime;
 
       searchObject.ingredients === '' ? ingredients = '' : ingredients = `&q=${searchObject.ingredients}`;
       searchObject.mealType === '' ? mealType = '' : mealType = `&mealType=${searchObject.mealType}`;

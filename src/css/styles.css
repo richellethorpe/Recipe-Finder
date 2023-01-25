@@ -358,10 +358,6 @@ input.option {
   width: 300px;
 }
 
-p {
-  text-align: center;
-}
-
 .card {
   width: 300px;
   margin: 10px 20px;
@@ -370,6 +366,12 @@ p {
   border-style: solid;
   border-width: 3px;
   overflow: hidden;
+}
+
+.card p {
+  text-align: center;
+
+  margin: 5px;
 }
 
 .top {
@@ -494,4 +496,40 @@ h1.fave {
 
 a {
   color: black;
+}
+
+/* Health Label Tags */
+.icons {
+  display: flex;
+  justify-content: center;
+  font-family: Silkscreen;
+  font-size: 10px;
+}
+
+.icons span {
+  display: flex;
+  margin: 2px;
+  margin-bottom: 10px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons .vegan {
+  background-color: rgb(0, 128, 0);
+  border-radius: 50%;
+  color: white;
+}
+
+.icons .pescatarian {
+  background-color: salmon;
+  border-radius: 50%;
+}
+
+.icons .vegetarian {
+  background-color: lightgreen;
+  border-radius: 50%;
+  color: darkgreen;
 }

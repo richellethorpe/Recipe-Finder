@@ -5,7 +5,7 @@ export const defaultRecipes = [
       "image": "https://minimalistbaker.com/wp-content/uploads/2022/11/Sweet-Potato-Blondies-8-1024x1536.jpg",
       "url": "https://minimalistbaker.com/tahini-sweet-potato-blondies/",
       "label": "Tahini Sweet Potato Blondies",
-      
+      "healthLabels": ['Vegetarian', 'Vegan']
     }
   },
   {

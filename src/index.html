@@ -9,82 +9,77 @@
 </head>
 
 <body>
-  <div id="back">
-    <div class="container">
-      <nav class="navbar">
-        <div class="site-title">
-          <h1>Di<span class="g">g</span>ital Dining</h1>
-        </div>
-        <p id="subtitle">An online recipe builder</p>
-        <a href="#" class="menubutton">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a>
+  <div class="container">
+    <nav class="navbar">
+      <div class="site-title">
+        <h1>Di<span class="g">g</span>ital Dining</h1>
+      </div>
+      <p id="subtitle">An online recipe builder</p>
+      <a href="#" class="menubutton">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
 
-        <div class="navlinks">
-          <ul>
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="favorites.html">Favorites</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html">About</a></li>
-          </ul>
+      <div class="navlinks">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
 
-        </div>
-      </nav>
+      </div>
+    </nav>
 
-      <div class="welcome">
-        <!-- <h1> Welcome to the pantry!</h1> -->
+    <div class="welcome"></div>
+
+    <form id="inputForm">
+      <div class="menu">
+        <label for="ingredientInput">Input ingredients you wish to use:</label>
+        <input id="ingredientInput" type="text" name="ingredientInput">
+        <button type="button" id="addIngredientButton">Add Ingredient</button>
+        <button type="button" id="clearButton">Clear Ingredients</button>
+      </div>
+      <hr class="top">
+
+      <div>
+        <ul id="listOfIngredients"></ul>
       </div>
 
-      <form id="inputForm">
+      <div class="filters">
         <div class="menu">
-          <label for="ingredientInput">Input ingredients you wish to use:</label>
-          <input id="ingredientInput" type="text" name="ingredientInput">
-          <button type="button" id="addIngredientButton">Add Ingredient</button>
-          <button type="button" id="clearButton">Clear Ingredients</button>
+          <label for="mealSelection">Select type of meal:</label>
+          <select name="mealSelection" id="mealSelection" class="option" class="option">
+            <option value="">Any</option>
+            <option value="dinner">Dinner</option>
+            <option value="lunch">Lunch</option>
+            <option value="breakfast">Breakfast</option>
+          </select>
         </div>
-        <hr class="top">
-
-        <div>
-          <ul id="listOfIngredients"></ul>
-        </div>
-
-        <div class="filters">
-          <div class="menu">
-            <label for="mealSelection">Select type of meal:</label>
-            <select name="mealSelection" id="mealSelection" class="option" class="option">
-              <option value="">Any</option>
-              <option value="dinner">Dinner</option>
-              <option value="lunch">Lunch</option>
-              <option value="breakfast">Breakfast</option>
-            </select>
-          </div>
-          <div class="menu">
-            <label for="health">Select health consideration:</label>
-            <select name="health" id="health" class="option">
-              <option></option>
-              <option value="" selected>Health Option</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="vegan">Vegan</option>
-              <option value="pescatarian">Pescatarian</option>
-            </select>
-          </div>
-          <div class="menu">
-            <label for="cookTime">Enter a MAX prep-time:</label>
-            <input id="cookTime" type="number" min=0 name="cookTime" placeholder="minutes" class="option">
-          </div>
-        </div>
-        <hr class="top">
         <div class="menu">
-          <button type="submit" id="submitForm">Find Recipe</button>
+          <label for="health">Select health consideration:</label>
+          <select name="health" id="health" class="option">
+            <option></option>
+            <option value="" selected>Health Option</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="pescatarian">Pescatarian</option>
+          </select>
         </div>
-      </form>
+        <div class="menu">
+          <label for="cookTime">Enter a MAX prep-time:</label>
+          <input id="cookTime" type="number" min=0 name="cookTime" placeholder="minutes" class="option">
+        </div>
+      </div>
+      <hr class="top">
+      <div class="menu">
+        <button type="submit" id="submitForm">Find Recipe</button>
+      </div>
+    </form>
 
 
-      <div class="container2" id="showResponse"></div>
-
-    </div>
+    <div class="container2" id="showResponse"></div>
   </div>
 </body>
 
