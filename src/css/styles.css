@@ -503,7 +503,8 @@ a {
   display: flex;
   justify-content: center;
   font-family: Silkscreen;
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .icons span {
@@ -515,21 +516,29 @@ a {
   text-align: center;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
 }
 
-.icons .vegan {
+.icons .Vegan {
   background-color: rgb(0, 128, 0);
-  border-radius: 50%;
   color: white;
 }
 
-.icons .pescatarian {
+.icons .Pescatarian {
   background-color: salmon;
-  border-radius: 50%;
 }
 
-.icons .vegetarian {
+.icons .Vegetarian {
   background-color: lightgreen;
-  border-radius: 50%;
   color: darkgreen;
+}
+
+.icons .Dairy-Free {
+  background-color: lightblue;
+  color: darkblue;
+}
+
+.icons .Gluten-Free {
+  background-color: burlywood;
+  color: brown;
 }

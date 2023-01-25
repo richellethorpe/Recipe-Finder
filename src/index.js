@@ -105,19 +105,19 @@ function printRecipe(recipeObject) {
   }
 }
 
+//Creates text icon element for each health tag
 function fetchIcon(healthTag) {
   let icon = document.createElement('span');
-  if (healthTag === 'Vegetarian') {
-    icon.innerText = 'V';
-    icon.setAttribute('class', 'Vegetarian');
-    return icon;
-  } else if (healthTag === 'Vegan') {
-    icon.innerText = 'VG';
-    icon.setAttribute('class', 'Vegan');
-    return icon;
-  } else if (healthTag === 'Pescatarian') {
-    icon.innerText = 'P';
-    icon.setAttribute('class', 'Pescatarian');
+  const iconKey = {
+    "Vegetarian": "V",
+    "Vegan": "VG",
+    "Pescatarian": "P",
+    "Dairy-Free": "DF",
+    "Gluten-Free": "GF"
+  };
+  if (healthTag in iconKey) {
+    icon.innerText = iconKey[healthTag];
+    icon.setAttribute('class', healthTag);
     return icon;
   } else {
     return '';
