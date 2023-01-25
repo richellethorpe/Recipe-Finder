@@ -73,7 +73,7 @@ function printRecipe(recipeObject) {
   pTag.append(recipeLink);
   divTag.append(pTag);
   results.append(divTag);
-  //Creates Add to Favorites Button
+  //Creates Add to Favorites Button only if on index.html page
   if (window.location.pathname !== '/favorites.html') {
     let favoriteButton = document.createElement('button');
     favoriteButton.type = 'button';
@@ -87,6 +87,7 @@ function printRecipe(recipeObject) {
         favoriteButton.remove();
       }
     }
+    //Only adds add to favorite button if recipe is not on favorites session storage list
     let currentFavorites = JSON.parse(sessionStorage.getItem('favorites'));
     if (!currentFavorites.some(e => e.recipe.label === recipeObject.recipe.label)) {
       divTag.append(favoriteButton);
