@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Fredoka+One&family=Homemade+Apple&family=Hurricane&family=Meddon&family=Nabla&family=Righteous&family=Silkscreen&family=Yatra+One&display=swap');
+
+
 * {
   box-sizing: border-box;
 }
@@ -29,20 +32,114 @@ body {
   text-align: center;
 }
 
-.navbar {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #FBC252;
-  color: black;
+#formdiv {
+  font-family: 'Silkscreen', cursive;
+} 
+
+#subtitle {
+  display: inline-flex;
+  font-weight: 600;
+  padding-left: 150px;
+  font-size: 22px;
+}
+
+#listOfIngredients {
+  font-family: Hurricane;
+  font-size: 30px;
+}
+
+#buttonSize {
+  font-size: 15px
 }
 
 .site-title {
-  font-size: 1.5rem;
-  margin: .5rem;
+  display: flex;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
+.navbar {
+  display: flex;
+  padding-right: 45px;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color:green;
+  color: black;
+  border-radius: 23%;
+  font-family: Silkscreen;
+}
+
+h1 {
+  display: inline-flex;
+  font-size: 8rem;
+  margin: 0 auto;
+  font-family: Nabla;
+  opacity: 75%;
+  border-radius: 20px;
+}
+
+
+
+.g { 
+  display: inline-flex;
+  align-items: left;
+  opacity: 75%;
+  animation: flickerG 2s linear 3s;
+}
+#g::after {
+	content: '';
+	width: 150%;
+	-webkit-box-shadow: 0px 0px 60px 8px rgb(0, 128, 0);
+	-moz-box-shadow: 0px 0px 60px 8px rgb(0, 128, 0);
+	box-shadow: -35px 0px 60px 8px rgb(0, 128, 0);
+}
+
+@keyframes flickerG {
+	0% {
+		opacity: .75;
+	}
+	5% {
+		opacity: 0.5;
+	}
+	10% {
+		opacity: 0.6;
+	}
+	15% {
+		opacity: 0.85;
+	}
+	25% {
+		opacity: 0.5;
+	}
+	30% {
+		opacity: 1;
+	}
+	35% {
+		opacity: 0.1;
+	}
+	40% {
+		opacity: 0.25;
+	}
+	45% {
+		opacity: 0.5;
+	}
+	60% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 0.85;
+	}
+	80% {
+		opacity: 0.4;
+	}
+	90% {
+		opacity: 0.5;
+	}
+  100%{
+    opacity: .75;
+  }
+	
+}
 
 .navlinks {
   height: 100%;
@@ -52,6 +149,7 @@ body {
   display: flex;
   margin: 0%;
   padding: 0%;
+  border-radius: 10%;
 }
 
 .navlinks li {
@@ -67,11 +165,13 @@ body {
 
 .navlinks li:hover {
   background-color: #FFB100;
+  border-radius: 20%;
 }
 
 .navlinks a.active {
   background-color: #FFB100;
   color: black;
+  border-radius: 20%;
 }
 
 .menubutton {
@@ -128,6 +228,12 @@ body {
 
 .welcome {
   text-align: center;
+  font-family: Silkscreen;
+}
+
+#ingredientInput {
+  width: 400px;
+  height: 40px;
 }
 
 .filters {
@@ -135,13 +241,22 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
+  font-family: Silkscreen;
+  font-size: 14px;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: Silkscreen;
 }
+
+.option {
+  width: 225px;
+  height: 30px;
+}
+
 
 #addIngredientButton {
   margin: 1rem;
@@ -179,6 +294,7 @@ input.option{
   margin-bottom: 1rem;
   font-family:Arial, Helvetica, sans-serif;
   font-size: 15px;
+  overflow: hidden;
 }
 
 .recipeImg {
@@ -199,9 +315,9 @@ p {
   margin: 10px 20px;
   background: #fff;
   border: black;
-  /* border-style: solid; */
+  border-style: solid;
   border-width: 3px;
-  box-shadow: 0 0 15px black;
+  /* box-shadow: 0 0 15px black; */
 }
 
 .top {
