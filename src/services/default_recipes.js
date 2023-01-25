@@ -49,6 +49,27 @@ export const defaultRecipes = [
       "label": "Vegan Bolognese with Mushrooms & Red Lentils"
     }
   },
+  {
+    "recipe": {
+      "image": "https://minimalistbaker.com/wp-content/uploads/2022/10/Kale-Salad-with-Crispy-Quinoa-6-683x1024.jpg",
+      "url": "https://minimalistbaker.com/crispy-quinoa-roasted-vegetable-kale-salad/",
+      "label": "Crispy Quinoa & Roasted Vegetable Kale Salad"
+    }
+  },
+  {
+    "recipe": {
+      "image": "https://minimalistbaker.com/wp-content/uploads/2022/10/GLUTEN-FREE-Biscotti-with-Almonds-and-Chocolate-Vegan-perfectly-crunchy-10-ingredients-minimalistbaker-recipe-glutenfree-almond-biscotti-9-683x1024.jpg",
+      "url": "https://minimalistbaker.com/gluten-free-chocolate-almond-biscotti/",
+      "label": "Gluten-Free Chocolate Almond Biscotti"
+    }
+  },
+  {
+    "recipe": {
+      "image": "https://minimalistbaker.com/wp-content/uploads/2022/09/CLASSIC-Latkes-but-vegan-and-gluten-free-SO-CRISPY-1-bowl-30-minutes-7-ingredients-minimalistbaker-recipe-plantbased-latkes-8-683x1024.jpg",
+      "url": "https://minimalistbaker.com/vegan-gluten-free-latkes/",
+      "label": "Crispy Vegan Gluten-Free Latkes"
+    }
+  },
 ];
 
 //Contains an array of the favorite recipes to be shown on the home page prior to search

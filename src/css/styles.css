@@ -309,6 +309,11 @@ p {
   align-items: center;
 } */
 
+.about {
+  font-family: Silkscreen;
+
+}
+
 
 /* Column design for favorites page */
 /* .row {
