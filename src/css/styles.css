@@ -479,9 +479,10 @@ input.option {
   width: min-content;
 }
 
-h1.fave {
+#fave {
   font-size: 55px;
   text-align: center;
+  font-family: "Fredoka One";
 }
 
 #shoppingList {
