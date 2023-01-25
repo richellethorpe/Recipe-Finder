@@ -6,52 +6,55 @@
 
 <body>
   <div id="back">
-    <nav class="navbar">
-      <div class="site-title">Site-Name</div>
+    <div class="container">
+      <nav class="navbar">
+        <div class="site-title">
+          <h1>Di<span class="g">g</span>ital Dining</h1>
+        </div>
+        <p id="subtitle">An online recipe builder</p>
+        <a href="#" class="menubutton">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
 
-      <a href="#" class="menubutton">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </a>
+        <div class="navlinks">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="favorites.html">Favorites</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
 
-      <div class="navlinks">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="favorites.html">Favorites</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </div>
-    </nav>
+      <div class="row">
+        <div class="column" id="favorites">
+          <h1>Your saved favorites!</h1>
+          <div class="container2" id="showResponse"></div>
+        </div>
 
-    <div class="row">
-      <div class="column" id="favorites">
-        <h1>Your saved favorites!</h1>
-        <div class="container2" id="showResponse"></div>
-      </div>
-
-      <div class="column">
-        <div id="postit">
-          <div>
-            <ul id="shoppingList">
-            </ul>
+        <div class="column">
+          <div id="postit">
+            <div>
+              <ul id="shoppingList">
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="column">
-        <form id="shoppingInput">
-          <label for="shoppingInputText">Shopping List:</label>
-          <input id="shoppingInputText" type="text" name="shoppingText">
-          <br>
-          <br>
-          <button type="button" id="submitInput">Add to list!</button>
-          <button type="button" id="clearInput">Clear list!</button>
-        </form>
+        <div class="column">
+          <form id="shoppingInput">
+            <label for="shoppingInputText">Shopping List:</label>
+            <input id="shoppingInputText" type="text" name="shoppingText">
+            <br>
+            <br>
+            <button type="button" id="submitInput">Add to list!</button>
+            <button type="button" id="clearInput">Clear list!</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 </body>
 
 </html>

@@ -47,49 +47,29 @@ export const defaultRecipes = [
       "label": "Vegan Chai-Spiced Creme Brulee",
       "healthLabels": ['Vegetarian', 'Vegan']
     }
-  }
-];
-
-//Contains an array of the favorite recipes to be shown on the home page prior to search
-export const staffRecipes = [
+  },
   {
-    "name": "Geoffrey",
     "recipe": {
-      "image": "https://minimalistbaker.com/wp-content/uploads/2022/11/Miso-glazed-salmon-7-1024x1536.jpg",
-      "url": "https://minimalistbaker.com/miso-glazed-salmon-veggie-sheet-pan-dinner/",
-      "label": "Miso-Glazed Salmon & Veggie Sheet Pan Dinner"
+      "image": "https://minimalistbaker.com/wp-content/uploads/2022/11/Vegan-Lentil-Bolognese-8-1024x1536.jpg",
+      "url": "https://minimalistbaker.com/vegan-bolognese-with-mushrooms-red-lentils/",
+      "label": "Vegan Bolognese with Mushrooms & Red Lentils",
+      "healthLabels": ['Vegetarian', 'Vegan']
     }
   },
   {
-    "name": "Richelle",
     "recipe": {
-      "image": "https://minimalistbaker.com/wp-content/uploads/2022/11/Protein-waffles-5-1024x1536.jpg",
-      "url": "https://minimalistbaker.com/vegan-protein-waffles-gluten-free/",
-      "label": "Protein Waffles"
+      "image": "https://minimalistbaker.com/wp-content/uploads/2022/10/Kale-Salad-with-Crispy-Quinoa-6-683x1024.jpg",
+      "url": "https://minimalistbaker.com/crispy-quinoa-roasted-vegetable-kale-salad/",
+      "label": "Crispy Quinoa & Roasted Vegetable Kale Salad",
+      "healthLabels": ['Vegetarian', 'Vegan']
     }
   },
   {
-    "name": "Chloe",
     "recipe": {
-      "image": "https://minimalistbaker.com/wp-content/uploads/2018/10/AMAZING-Vegan-Palak-Paneer-with-Tofu-30-minutes-wholesome-ingredients-EASY-BIG-flavor-vegan-glutenfree-palakpaneer-tofu-curry-minimalistbaker-recipe-7-768x1152.jpg",
-      "url": "https://minimalistbaker.com/easy-protein-packed-plant-based-meals/",
-      "label": "Easy Protein-Packed Plant-Based Meals"
-    }
-  },
-  {
-    "name": "Noah",
-    "recipe": {
-      "image": "https://minimalistbaker.com/wp-content/uploads/2022/11/Almond-Flour-Crackers-10-1024x1536.jpg",
-      "url": "https://minimalistbaker.com/almond-flour-crackers-1-bowl/",
-      "label": "Almond Flour Crackers"
-    }
-  },
-  {
-    "name": "Brian",
-    "recipe": {
-      "image": "https://minimalistbaker.com/wp-content/uploads/2022/11/No-Bake-Vegan-Cinnamon-Rolls-8-1024x1536.jpg",
-      "url": "https://minimalistbaker.com/no-bake-cinnamon-roll-bites/",
-      "label": "No-Bake Cinnamon Roll Bites"
+      "image": "https://minimalistbaker.com/wp-content/uploads/2022/10/GLUTEN-FREE-Biscotti-with-Almonds-and-Chocolate-Vegan-perfectly-crunchy-10-ingredients-minimalistbaker-recipe-glutenfree-almond-biscotti-9-683x1024.jpg",
+      "url": "https://minimalistbaker.com/gluten-free-chocolate-almond-biscotti/",
+      "label": "Gluten-Free Chocolate Almond Biscotti",
+      "healthLabels": ['Vegetarian']
     }
   }
 ];
