@@ -73,7 +73,7 @@ function printRecipe(recipeObject) {
   recipeLink.innerHTML = recipeObject.recipe.label;
   pTag.append(recipeLink);
   divTag.append(pTag);
-  //Creates Icon set for health tags
+  //Creates Icon set for health labels
   let healthTags = recipeObject.recipe.healthLabels;
   let iconGroup = document.createElement('div');
   iconGroup.setAttribute('class', 'icons');
