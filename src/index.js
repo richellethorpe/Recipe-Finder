@@ -68,15 +68,17 @@ function printRecipe(recipeObject) {
   let recipeLink = document.createElement('a');
   recipeLink.setAttribute('href', recipeObject.recipe.url);
   recipeLink.setAttribute('target', '_blank');
+  recipeLink.setAttribute('class', 'menu');
   recipeLink.innerHTML = recipeObject.recipe.label;
   pTag.append(recipeLink);
   divTag.append(pTag);
   results.append(divTag);
-  //Creates Add to Favorites Button
+  //Creates Add to Favorites Button only if on index.html page
   if (window.location.pathname !== '/favorites.html') {
     let favoriteButton = document.createElement('button');
     favoriteButton.type = 'button';
     favoriteButton.innerHTML = 'Add to Favorites';
+    favoriteButton.setAttribute('class', 'menu');
     favoriteButton.onclick = function () {
       let currentFavorites = JSON.parse(sessionStorage.getItem('favorites'));
       if (!currentFavorites.some(e => e.recipe.label === recipeObject.recipe.label)) {
@@ -84,8 +86,12 @@ function printRecipe(recipeObject) {
         sessionStorage.setItem('favorites', JSON.stringify(currentFavorites));
         favoriteButton.remove();
       }
-    };
-    divTag.append(favoriteButton);
+    }
+    //Only adds add to favorite button if recipe is not on favorites session storage list
+    let currentFavorites = JSON.parse(sessionStorage.getItem('favorites'));
+    if (!currentFavorites.some(e => e.recipe.label === recipeObject.recipe.label)) {
+      divTag.append(favoriteButton);
+    }
     results.append(divTag);
   }
 }
@@ -154,6 +160,8 @@ function clearList() {
     sessionStorage.setItem('inventory', JSON.stringify(inventory));
     refreshInventoryList();
     document.querySelector('#ingredientInput').value = null;
+    let submitButton = document.getElementById("submitForm");
+    submitButton.disabled = true;
   } else if (window.location.pathname == '/favorites.html') {
     let shoppingList = [];
     sessionStorage.setItem('shoppingList', JSON.stringify(shoppingList));

@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Fredoka+One&family=Homemade+Apple&family=Hurricane&family=Meddon&family=Nabla&family=Righteous&family=Silkscreen&family=Yatra+One&display=swap');
 
-
 * {
   box-sizing: border-box;
 }
 
+#abouth1 {
+  font-family: Righteous;
+  font-size: 4rem;
+  justify-content: bottom;
+}
 
 body {
   margin: 0;
@@ -47,7 +51,7 @@ body {
   position: relative;
   justify-content: space-between;
   align-items: center;
-  background-color:green;
+  background-color: green;
   color: black;
   border-radius: 23%;
   font-family: Silkscreen;
@@ -64,100 +68,121 @@ h1 {
 
 @media only screen and (max-width: 800px) {
   h1 {
-    font-size:6rem;
+    font-size: 6rem;
   }
-}
+} 
 
-
-.g { 
+.g {
   display: inline-flex;
   align-items: left;
   opacity: 75%;
-  animation: flickerG 3s linear 1s reverse ;
+  animation: flickerG 3s linear 1s reverse;
 }
+
 #g::after {
-	content: '';
-	width: 150%;
-	-webkit-box-shadow: 0px 0px 60px 8px rgb(0, 128, 0);
-	-moz-box-shadow: 0px 0px 60px 8px rgb(0, 128, 0);
-	box-shadow: -35px 0px 60px 8px rgb(0, 128, 0);
+  content: '';
+  width: 150%;
+  -webkit-box-shadow: 0px 0px 60px 8px rgb(0, 128, 0);
+  -moz-box-shadow: 0px 0px 60px 8px rgb(0, 128, 0);
+  box-shadow: -35px 0px 60px 8px rgb(0, 128, 0);
 }
 
 @keyframes flickerG {
-	0% {
-		opacity: 0.5;
-	}
+  0% {
+    opacity: 0.5;
+  }
+
   3% {
     opacity: 0
   }
-	5% {
-		opacity: 0.5;
-	}
+
+  5% {
+    opacity: 0.5;
+  }
+
   7% {
     opacity: 0;
   }
-  9% { 
+
+  9% {
     opacity: 0.7;
   }
-	10% {
-		opacity: 0.6;
-	}
+
+  10% {
+    opacity: 0.6;
+  }
+
   13% {
     opacity: 0
   }
-	15% {
-		opacity: 0.85;
-	}
+
+  15% {
+    opacity: 0.85;
+  }
+
   18% {
     opacity: 0
   }
-	25% {
-		opacity: 0.5;
-	}
+
+  25% {
+    opacity: 0.5;
+  }
+
   27% {
     opacity: 0
   }
-	30% {
-		opacity: 1;
-	}
-	35% {
-		opacity: 0.1;
-	}
-	40% {
-		opacity: 0.25;
-	}
+
+  30% {
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 0.1;
+  }
+
+  40% {
+    opacity: 0.25;
+  }
+
   42% {
     opacity: 0
   }
-	45% {
-		opacity: 0.5;
-	}
-	60% {
-		opacity: 1;
-	}
-	70% {
-		opacity: 0.85;
-	}
-	80% {
-		opacity: 0.4;
-	}
-	90% {
-		opacity: 0.5;
-	}
+
+  45% {
+    opacity: 0.5;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.85;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
   95% {
     opacity: 0;
   }
-  100%{
+
+  100% {
     opacity: .75;
   }
-	
+
 }
 
 .navlinks {
   height: 100%;
 }
 
-.navlinks ul{
+.navlinks ul {
   display: flex;
   margin: 0%;
   padding: 0%;
@@ -196,7 +221,6 @@ h1 {
   width: 40px;
   height: 21px;
 }
-
 
 .menubutton .bar {
   height: 4px;
@@ -283,15 +307,18 @@ h1 {
 #listOfIngredients button {
   margin-left: .5rem;
   margin-right: 2rem;
-  
+
 }
-input.option{
+
+input.option {
   text-align: center;
 }
-.option{
+
+.option {
   width: 200px;
   height: 25px;
 }
+
 #showResponse {
   display: flex;
   align-items: flex-start;
@@ -304,7 +331,7 @@ input.option{
   list-style: none;
   text-align: center;
   margin-bottom: 1rem;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   overflow: hidden;
 }
@@ -321,7 +348,7 @@ p {
   text-align: center;
 }
 
-.card{
+.card {
   /* flex: 1 1 21rem; */
   width: 300px;
   margin: 10px 20px;
@@ -330,6 +357,7 @@ p {
   border-style: solid;
   border-width: 3px;
   overflow: hidden;
+  overflow: hidden;
   /* box-shadow: 0 0 15px black; */
 }
 
@@ -337,6 +365,7 @@ p {
   border: 2px solid black;
   border-radius: 2px;
 }
+
 /* .#submitForm button{
   display: flex;
   align-items: center;
@@ -344,6 +373,9 @@ p {
 
 .about {
   font-family: Silkscreen;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -355,6 +387,8 @@ p {
   text-align: center;
 }
 
+.about .container {
+  text-align: center;
 .about-text {
   display: flex;
   align-items: center;
@@ -369,10 +403,6 @@ p {
   display: flex;
 }
 
-.column {
-  flex: 50%;
-} */
-
 #favorites {
   text-align: center;
 }
@@ -383,6 +413,7 @@ p {
   text-align: center;
   margin: 25px;
   width: 250px;
+  width: min-content;
   min-height: 250px;
   max-height: 250px;
   padding-top: 35px;
@@ -393,64 +424,88 @@ p {
   font-size: 22px;
   border-bottom-right-radius: 60px 5px;
   display: inline-block;
-  background: #ffff88; /*Old browsers */
-  background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffff88), color-stop(82%,#ffff88), color-stop(82%,#ffff88), color-stop(100%,#ffffc6)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
-  background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='ffffc6', GradientType=1 );
-} 
+  background: #ffff88;
+  /*Old browsers */
+  background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(81%, #ffff88), color-stop(82%, #ffff88), color-stop(82%, #ffff88), color-stop(100%, #ffffc6));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%);
+  /* IE10+ */
+  background: linear-gradient(135deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff88', endColorstr='ffffc6', GradientType=1);
+}
 
 #postit:after {
   content: "";
-  position:absolute;
-  z-index:-1;
-  right:-0px; bottom:20px;
-  width:200px;
+  position: absolute;
+  z-index: -1;
+  right: -0px;
+  bottom: 20px;
+  width: 200px;
   height: 25px;
   background: rgba(0, 0, 0, 0.2);
-  box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
+  box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.40);
   -moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
   -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
   -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
   -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
   transform: matrix(-1, -0.1, 0, 1, 0, 0);
-} 
+}
 
 #shoppingInput {
-  text-align: justify;
-  position: absolute;
-  margin-left: 50%;
-}
-
-.rotate {
-  background-color: transparent;
-  transform: rotate(5deg);
-}
-/* 
-#postit {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 8px;
-  padding-right: 8px;
-  background-color: rgb(227, 255, 204);
-  box-shadow: 0px 2px 2px 3px #dadada;
-  -webkit-transform: rotate(-4deg);
-  -o-transform: rotate(-4deg);
-  -moz-transform: rotate(-4deg);
-  max-width: 240px;
-  height: 240px;
   position: relative;
-  right: 28%;
   text-align: center;
-  margin: center;
-  display: center;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 190px;
 }
 
-/* display: flex;
-align-items: flex-start;
-flex-wrap: wrap;
-justify-content: space-between;
-flex-basis: 30%; */
+/* Column design for favorites page */
+.row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+.column {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+#favorites {
+  text-align: center;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+h1.fave {
+  font-size: 55px;
+  text-align: center;
+}
+
+#shoppingList {
+  font-family: "homemade apple";
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#shop {
+  position: absolute;
+}
+
+a {
+  color: black;
+}
