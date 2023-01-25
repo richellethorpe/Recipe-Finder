@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+#abouth1 {
+  font-family: Righteous;
+  font-size: 4rem;
+  justify-content: bottom;
+}
 
 body {
   margin: 0;
@@ -369,7 +374,14 @@ p {
 
 .about {
   font-family: Silkscreen;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px;
 
+}
+
+.about .container {
+  text-align: center;
 }
 
 #favorites {
