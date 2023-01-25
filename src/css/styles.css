@@ -309,26 +309,13 @@ p {
   align-items: center;
 } */
 
-
-/* Column design for favorites page */
-/* .row {
-  display: flex;
-}
-
-.column {
-  flex: 50%;
-} */
-
-#favorites {
-  text-align: center;
-}
-
 /* Postit Note styling */
 #postit {
   line-height: 1;
   text-align: center;
   margin: 25px;
   width: 250px;
+  width: min-content;
   min-height: 250px;
   max-height: 250px;
   padding-top: 35px;
@@ -365,38 +352,44 @@ p {
   transform: matrix(-1, -0.1, 0, 1, 0, 0);
 } 
 
-#shoppingInput {
-  text-align: justify;
-  position: absolute;
-  margin-left: 50%;
-}
-
-.rotate {
-  background-color: transparent;
-  transform: rotate(5deg);
-}
-/* 
-#postit {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 8px;
-  padding-right: 8px;
-  background-color: rgb(227, 255, 204);
-  box-shadow: 0px 2px 2px 3px #dadada;
-  -webkit-transform: rotate(-4deg);
-  -o-transform: rotate(-4deg);
-  -moz-transform: rotate(-4deg);
-  max-width: 240px;
-  height: 240px;
-  position: relative;
-  right: 28%;
+#shop {
   text-align: center;
-  margin: center;
-  display: center;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 190px;
 }
 
-/* display: flex;
-align-items: flex-start;
-flex-wrap: wrap;
-justify-content: space-between;
-flex-basis: 30%; */
+shoppingInput {
+  font-family: "homemade apple";
+}
+
+/* Column design for favorites page */
+.row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+}
+
+.column {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+
+#favorites {
+  text-align: center;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+h1.fave {
+  font-size: 60px;
+  text-align: center;
+}
+
