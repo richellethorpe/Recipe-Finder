@@ -343,9 +343,29 @@ p {
 
 .about {
   font-family: Silkscreen;
-
 }
 
+.about-title {
+  display: flex;
+  align-content: center;
+}
+
+.about-names {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-basis: 30%;
+}
+
+.about-text {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-basis: 30%;
+
+}
 
 /* Column design for favorites page */
 /* .row {
