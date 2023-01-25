@@ -443,7 +443,7 @@ p {
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  
+
 }
 
 .column {
@@ -451,7 +451,7 @@ p {
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: space-between;
-  
+
 }
 
 #favorites {
@@ -475,3 +475,6 @@ h1.fave {
   position: absolute;
 }
 
+a {
+  color: black;
+}
