@@ -231,6 +231,13 @@ window.addEventListener('load', function () {
   if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
     document.querySelector('#inputForm').addEventListener('submit', handleForm);
     document.getElementById('addIngredientButton').addEventListener('click', addIngredient);
+    // add 'enter key' as a method to submit ingredient input
+    document.getElementById('ingredientInput').addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById('addIngredientButton').click();
+      }
+    });
     document.getElementById('clearButton').addEventListener('click', clearList);
     //Establishes Inventory list if it doesn't exist, and disables submit button if there are no items in inventory
     if (!this.sessionStorage.getItem('inventory') || JSON.parse(this.sessionStorage.getItem('inventory')).length == 0) {
