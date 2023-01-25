@@ -371,6 +371,10 @@ p {
   margin-left: 50%;
 }
 
+#shoppingList {
+  font-family: "homemade apple"
+}
+
 .rotate {
   background-color: transparent;
   transform: rotate(5deg);
