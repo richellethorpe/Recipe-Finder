@@ -170,7 +170,7 @@ const runMenuButton = () => {
   });
 };
 
-//Submits API Call, and prints
+//Submits API Call, and prints recipes
 async function handleForm(event) {
   event.preventDefault();
   let recipeObjectsList = await getRecipes();
