@@ -389,7 +389,9 @@ p {
 
 .about .container {
   text-align: center;
-.about-text {
+}
+
+  .about-text {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
