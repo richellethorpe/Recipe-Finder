@@ -196,7 +196,7 @@ window.addEventListener('load', function () {
     document.querySelector('#inputForm').addEventListener('submit', handleForm);
     document.getElementById('addIngredientButton').addEventListener('click', addIngredient);
     document.getElementById('clearButton').addEventListener('click', clearList);
-    if (!this.sessionStorage.getItem('inventory')) {
+    if (!this.sessionStorage.getItem('inventory') || JSON.parse(this.sessionStorage.getItem('inventory')).length == 0) {
       //document.getElementById('ingredientInput').addEventListener('keypress', addIngredient);
       let inventory = [];
       sessionStorage.setItem('inventory', JSON.stringify(inventory));
