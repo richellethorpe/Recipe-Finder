@@ -68,6 +68,7 @@ function printRecipe(recipeObject) {
   let recipeLink = document.createElement('a');
   recipeLink.setAttribute('href', recipeObject.recipe.url);
   recipeLink.setAttribute('target', '_blank');
+  recipeLink.setAttribute('class', 'menu');
   recipeLink.innerHTML = recipeObject.recipe.label;
   pTag.append(recipeLink);
   divTag.append(pTag);
@@ -77,6 +78,7 @@ function printRecipe(recipeObject) {
     let favoriteButton = document.createElement('button');
     favoriteButton.type = 'button';
     favoriteButton.innerHTML = 'Add to Favorites';
+    favoriteButton.setAttribute('class', 'menu');
     favoriteButton.onclick = function () {
       let currentFavorites = JSON.parse(sessionStorage.getItem('favorites'));
       if (!currentFavorites.some(e => e.recipe.label === recipeObject.recipe.label)) {
