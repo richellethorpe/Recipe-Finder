@@ -346,8 +346,7 @@ p {
 }
 
 .about-title {
-  display: flex;
-  align-content: center;
+  text-align: right;
 }
 
 .about-names {
