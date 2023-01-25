@@ -10,7 +10,6 @@ import { defaultRecipes } from './services/default_recipes.js';
 async function getRecipes() {
   const response = await RecipeFinder.getRecipes();
   if (response.hits) {
-    //Array of recipe objects from API call
     return response.hits;
   } else {
     printError(response);
@@ -31,7 +30,7 @@ function addIngredient() {
   document.querySelector('#ingredientInput').value = null;
 }
 
-//Adds recipes to favorites session storage list
+//Adds Recipe object to favorites session storage list
 function addShoppingIngredient() {
   let newShoppingIngredient = document.getElementById('shoppingInputText').value;
   let currentShoppingInventory = JSON.parse(sessionStorage.getItem('shoppingList'));
@@ -73,7 +72,7 @@ function printRecipe(recipeObject) {
   pTag.append(recipeLink);
   divTag.append(pTag);
   results.append(divTag);
-  //Creates Favorite Button
+  //Creates Add to Favorites Button
   if (window.location.pathname !== '/favorites.html') {
     let favoriteButton = document.createElement('button');
     favoriteButton.type = 'button';
@@ -90,21 +89,6 @@ function printRecipe(recipeObject) {
     results.append(divTag);
   }
 }
-
-function printError(errorMessage) {
-  let results = document.querySelector("#showResponse");
-  results.append(errorMessage);
-}
-
-async function handleForm(event) {
-  event.preventDefault();
-  let recipeObjectsList = await getRecipes();
-  document.querySelector("#showResponse").innerText = null;
-  document.querySelector('#ingredientInput').value = null;
-  //favorites
-  printAllRecipes(recipeObjectsList);
-}
-
 
 //Updates the ul of the inventory
 function refreshInventoryList() {
@@ -142,9 +126,9 @@ function refreshShoppingList() {
   let ul = document.getElementById('shoppingList');
   //Clear list
   ul.innerHTML = '';
-  //gets sessionStorage inventory
+  //gets sessionStorage shoppingList
   let shoppingList = JSON.parse(sessionStorage.getItem('shoppingList'));
-  //generates list items for each item in the Inventory including a delete button for each ingredient
+  //generates list items for each item in the shopping list including a delete button for each ingredient
   shoppingList.forEach(element => {
     let ingredients = document.createElement('li');
     ingredients.append(element);
@@ -163,6 +147,7 @@ function refreshShoppingList() {
   });
 }
 
+//Clears the inventory or shopping list depending on which page the user is currently on
 function clearList() {
   if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
     let inventory = [];
@@ -184,6 +169,21 @@ const runMenuButton = () => {
     navLinks.classList.toggle('active');
   });
 };
+
+//Submits API Call, and prints
+async function handleForm(event) {
+  event.preventDefault();
+  let recipeObjectsList = await getRecipes();
+  document.querySelector("#showResponse").innerText = null;
+  document.querySelector('#ingredientInput').value = null;
+  //favorites
+  printAllRecipes(recipeObjectsList);
+}
+
+function printError(errorMessage) {
+  let results = document.querySelector("#showResponse");
+  results.append(errorMessage);
+}
 
 window.addEventListener('load', function () {
   //Generates favorites list if it doesn't exist
