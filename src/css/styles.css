@@ -344,6 +344,7 @@ p {
 
 .about {
   font-family: Silkscreen;
+  text-align: center;
 }
 
 .about-title {
@@ -351,11 +352,7 @@ p {
 }
 
 .about-names {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-basis: 30%;
+  text-align: center;
 }
 
 .about-text {
