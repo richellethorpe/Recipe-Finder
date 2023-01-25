@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Fredoka+One&family=Homemade+Apple&family=Hurricane&family=Meddon&family=Nabla&family=Righteous&family=Silkscreen&family=Yatra+One&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital@1&family=Montserrat:wght@500&family=Raleway:ital,wght@0,300;1,300;1,500;1,700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -16,12 +15,12 @@ body {
   background-image: url("https://thumbs.dreamstime.com/b/seamless-pattern-cartoon-food-funny-comic-eggs-bacon-sandwich-croissant-fruits-milk-apple-orange-fork-spoon-vector-91210881.jpg");
   /* display: flex; */
   /* justify-content: center; */
-  font-family: 'Raleway', sans-serif;
+
 }
 
 #formdiv {
-  /* font-family: 'Silkscreen', cursive; */
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Silkscreen', cursive;
+  
 }
 .layer {
   display: flex; 
@@ -36,7 +35,7 @@ body {
   margin-top: 10%;
   background-color: rgb(250, 250, 245);
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Silkscreen', cursive;
 }
 
 #subtitle {
@@ -49,7 +48,7 @@ body {
 #listOfIngredients {
   /* font-family: Hurricane; */
   /* font-family: 'Cormorant', serif; */
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Silkscreen', cursive;
   font-size: 30px;
 }
 
@@ -74,9 +73,9 @@ body {
   align-items: center;
   background-color: green;
   color: black;
-  /* border-radius: 23%; */
-  /* font-family: Silkscreen; */
-  font-family: 'Raleway', sans-serif;
+  border-radius: 23%;
+  font-family: Silkscreen;
+ 
 }
 
 h1 {
@@ -302,8 +301,8 @@ h1 {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
-  /* font-family: Silkscreen; */
-  font-family: 'Raleway', sans-serif;
+  font-family: Silkscreen;
+  
   font-size: 14px;
 }
 
@@ -311,8 +310,8 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* font-family: Silkscreen; */
-  font-family: 'Raleway', sans-serif;
+  font-family: Silkscreen;
+  
 }
 
 .option {
@@ -358,8 +357,8 @@ input.option {
   list-style: none;
   text-align: center;
   margin-bottom: 1rem;
-  /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: 'Raleway', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  
   font-size: 15px;
   overflow: hidden;
 }
@@ -382,9 +381,10 @@ p {
   margin: 10px 20px;
   background: #fff;
   border: black;
-  /* border-style: solid; */
+  border-style: solid;
   border-width: 3px;
-  box-shadow: 0 0 15px black;
+  overflow: hidden;
+  /* box-shadow: 0 0 15px black; */
 }
 
 .top {
@@ -398,20 +398,10 @@ p {
 } */
 
 .about {
-  /* font-family: Silkscreen; */
-  font-family: 'Raleway', sans-serif;
+  font-family: Silkscreen;
+  
 
 }
-
-
-/* Column design for favorites page */
-/* .row {
-  display: flex;
-}
-
-.column {
-  flex: 50%;
-} */
 
 #favorites {
   text-align: center;
@@ -423,6 +413,7 @@ p {
   text-align: center;
   margin: 25px;
   width: 250px;
+  width: min-content;
   min-height: 250px;
   max-height: 250px;
   padding-top: 35px;
@@ -469,42 +460,53 @@ p {
 }
 
 #shoppingInput {
-  text-align: justify;
-  position: absolute;
-  margin-left: 50%;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 190px;
 }
 
-.rotate {
-  background-color: transparent;
-  transform: rotate(5deg);
+/* Column design for favorites page */
+.row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+.column {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+#favorites {
+  text-align: center;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+h1.fave {
+  font-size: 55px;
+  text-align: center;
+}
+
+#shoppingList {
+  font-family: "homemade apple";
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#shop {
+  position: absolute;
 }
 
 a {
   color: black;
 }
-
-/* 
-#postit {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 8px;
-  padding-right: 8px;
-  background-color: rgb(227, 255, 204);
-  box-shadow: 0px 2px 2px 3px #dadada;
-  -webkit-transform: rotate(-4deg);
-  -o-transform: rotate(-4deg);
-  -moz-transform: rotate(-4deg);
-  max-width: 240px;
-  height: 240px;
-  position: relative;
-  right: 28%;
-  text-align: center;
-  margin: center;
-  display: center;
-}
-
-/* display: flex;
-align-items: flex-start;
-flex-wrap: wrap;
-justify-content: space-between;
-flex-basis: 30%; */
