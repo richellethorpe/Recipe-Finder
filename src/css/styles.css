@@ -11,9 +11,27 @@ body {
   padding: 0;
   background-color: #F0ECCF;
 }
+.contact {
+  background-image: url("https://thumbs.dreamstime.com/b/seamless-pattern-cartoon-food-funny-comic-eggs-bacon-sandwich-croissant-fruits-milk-apple-orange-fork-spoon-vector-91210881.jpg");
+  /* display: flex; */
+  /* justify-content: center; */
+}
 
 #formdiv {
   font-family: 'Silkscreen', cursive;
+.layer {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 75%;
+  height: 100%; */
+  
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10%;
+  background-color: rgba(247, 234, 88, 0.92);
+  text-align: center;
 }
 
 #subtitle {
