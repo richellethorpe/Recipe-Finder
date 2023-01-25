@@ -15,25 +15,20 @@ body {
   padding: 0;
   background-color: #F0ECCF;
 }
+
 .contact {
   background-image: url("https://thumbs.dreamstime.com/b/seamless-pattern-cartoon-food-funny-comic-eggs-bacon-sandwich-croissant-fruits-milk-apple-orange-fork-spoon-vector-91210881.jpg");
-  /* display: flex; */
-  /* justify-content: center; */
-
 }
 
 #formdiv {
   font-family: 'Silkscreen', cursive;
-  
 }
+
 .layer {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 75%;
-  height: 100%; */
-  
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 10%;
@@ -50,8 +45,6 @@ body {
 }
 
 #listOfIngredients {
-  /* font-family: Hurricane; */
-  /* font-family: 'Cormorant', serif; */
   font-family: 'Silkscreen', cursive;
   font-size: 30px;
 }
@@ -79,7 +72,6 @@ body {
   color: black;
   border-radius: 23%;
   font-family: Silkscreen;
- 
 }
 
 h1 {
@@ -95,7 +87,7 @@ h1 {
   h1 {
     font-size: 6rem;
   }
-} 
+}
 
 .g {
   display: inline-flex;
@@ -289,7 +281,6 @@ h1 {
 
 .welcome {
   text-align: center;
-  /* font-family: Silkscreen; */
   font-family: 'Raleway', sans-serif;
 }
 
@@ -304,7 +295,6 @@ h1 {
   justify-content: space-between;
   margin-bottom: 2rem;
   font-family: Silkscreen;
-  
   font-size: 14px;
 }
 
@@ -313,7 +303,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   font-family: Silkscreen;
-  
 }
 
 .option {
@@ -360,7 +349,6 @@ input.option {
   text-align: center;
   margin-bottom: 1rem;
   font-family: Arial, Helvetica, sans-serif;
-  
   font-size: 15px;
   overflow: hidden;
 }
@@ -368,9 +356,6 @@ input.option {
 .recipeImg {
   cursor: pointer;
   width: 300px;
-  /* border: black;
-  border-style: solid;
-  border-width: 3px; */
 }
 
 p {
@@ -378,7 +363,6 @@ p {
 }
 
 .card {
-  /* flex: 1 1 21rem; */
   width: 300px;
   margin: 10px 20px;
   background: #fff;
@@ -386,18 +370,12 @@ p {
   border-style: solid;
   border-width: 3px;
   overflow: hidden;
-  /* box-shadow: 0 0 15px black; */
 }
 
 .top {
   border: 2px solid black;
   border-radius: 2px;
 }
-
-/* .#submitForm button{
-  display: flex;
-  align-items: center;
-} */
 
 .about {
   font-family: Silkscreen;
@@ -428,7 +406,6 @@ p {
   position: relative;
   border: 1px solid #e8e8e8;
   border-top: 30px solid #fdfd86;
-  /* font-family: 'Reenie Beanie'; */
   font-family: 'Raleway', sans-serif;
   font-size: 22px;
   border-bottom-right-radius: 60px 5px;
