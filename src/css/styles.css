@@ -329,6 +329,7 @@ p {
   border: black;
   border-style: solid;
   border-width: 3px;
+  overflow: hidden;
   /* box-shadow: 0 0 15px black; */
 }
 
