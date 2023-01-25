@@ -86,8 +86,11 @@ function printRecipe(recipeObject) {
         sessionStorage.setItem('favorites', JSON.stringify(currentFavorites));
         favoriteButton.remove();
       }
-    };
-    divTag.append(favoriteButton);
+    }
+    let currentFavorites = JSON.parse(sessionStorage.getItem('favorites'));
+    if (!currentFavorites.some(e => e.recipe.label === recipeObject.recipe.label)) {
+      divTag.append(favoriteButton);
+    }
     results.append(divTag);
   }
 }
