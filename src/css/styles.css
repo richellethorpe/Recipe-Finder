@@ -223,6 +223,11 @@ p {
   /* box-shadow: 0 0 15px black; */
 }
 
+.about {
+  font-family: Silkscreen;
+
+}
+
 
 /* Column design for favorites page */
 /* .row {
