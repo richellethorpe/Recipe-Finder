@@ -65,7 +65,6 @@ function printRecipe(recipeObject) {
   divTag.append(imgTag);
   //Creates Link
   let pTag = document.createElement("p");
-  let labelTag = document.createElement("p");
   let recipeLink = document.createElement('a');
   recipeLink.setAttribute('href', recipeObject.recipe.url);
   recipeLink.setAttribute('target', '_blank');
@@ -73,7 +72,6 @@ function printRecipe(recipeObject) {
   recipeLink.innerHTML = recipeObject.recipe.label;
   pTag.append(recipeLink);
   divTag.append(pTag);
-  divTag.append(labelTag);
   results.append(divTag);
   //Creates Add to Favorites Button only if on index.html page
   if (window.location.pathname !== '/favorites.html') {
