@@ -17,14 +17,40 @@ async function getRecipes() {
   }
 }
 
+//Adds Ingredient from the input form to the session storage inventory
+function addIngredient() {
+  let newIngredient = document.querySelector('#ingredientInput').value;
+  let currentInventory = JSON.parse(sessionStorage.getItem('inventory'));
+  if (!currentInventory.includes(newIngredient) && newIngredient !== '') {
+    currentInventory.push(newIngredient);
+    sessionStorage.setItem('inventory', JSON.stringify(currentInventory));
+    let submitButton = document.getElementById("submitForm");
+    submitButton.disabled = false;
+  }
+  refreshInventoryList();
+  document.querySelector('#ingredientInput').value = null;
+}
+
+//Adds recipes to favorites session storage list
+function addShoppingIngredient() {
+  let newShoppingIngredient = document.getElementById('shoppingInputText').value;
+  let currentShoppingInventory = JSON.parse(sessionStorage.getItem('shoppingList'));
+  if (!currentShoppingInventory.includes(newShoppingIngredient) && newShoppingIngredient !== '') {
+    currentShoppingInventory.push(newShoppingIngredient);
+    sessionStorage.setItem('shoppingList', JSON.stringify(currentShoppingInventory));
+  }
+  refreshShoppingList();
+  document.querySelector('#shoppingInputText').value = null;
+}
+
+//UI Logic
+
 //Prints each element in an array of recipe objects
 function printAllRecipes(recipesListObject) {
   recipesListObject.forEach(element => {
     printRecipe(element);
   });
 }
-
-//UI Logic
 
 function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
@@ -47,8 +73,6 @@ function printRecipe(recipeObject) {
   pTag.append(recipeLink);
   divTag.append(pTag);
   results.append(divTag);
-
-
   //Creates Favorite Button
   if (window.location.pathname !== '/favorites.html') {
     let favoriteButton = document.createElement('button');
@@ -81,19 +105,6 @@ async function handleForm(event) {
   printAllRecipes(recipeObjectsList);
 }
 
-//Adds Ingredient from the input form to the session storage inventory
-function addIngredient() {
-  let newIngredient = document.querySelector('#ingredientInput').value;
-  let currentInventory = JSON.parse(sessionStorage.getItem('inventory'));
-  if (!currentInventory.includes(newIngredient) && newIngredient !== '') {
-    currentInventory.push(newIngredient);
-    sessionStorage.setItem('inventory', JSON.stringify(currentInventory));
-    let submitButton = document.getElementById("submitForm");
-    submitButton.disabled = false;
-  }
-  refreshInventoryList();
-  document.querySelector('#ingredientInput').value = null;
-}
 
 //Updates the ul of the inventory
 function refreshInventoryList() {
@@ -126,19 +137,7 @@ function refreshInventoryList() {
   });
 }
 
-//favorites
-function addShoppingIngredient() {
-  let newShoppingIngredient = document.getElementById('shoppingInputText').value;
-  let currentShoppingInventory = JSON.parse(sessionStorage.getItem('shoppingList'));
-  if (!currentShoppingInventory.includes(newShoppingIngredient) && newShoppingIngredient !== '') {
-    currentShoppingInventory.push(newShoppingIngredient);
-    sessionStorage.setItem('shoppingList', JSON.stringify(currentShoppingInventory));
-  }
-  refreshShoppingList();
-  document.querySelector('#shoppingInputText').value = null;
-}
-
-//Updates the ul of the inventory
+//Updates the ul of the shopping list
 function refreshShoppingList() {
   let ul = document.getElementById('shoppingList');
   //Clear list
@@ -178,7 +177,6 @@ function clearList() {
   }
 }
 
-
 const runMenuButton = () => {
   const menuButton = document.getElementsByClassName('menubutton')[0];
   const navLinks = document.getElementsByClassName('navlinks')[0];
@@ -188,16 +186,18 @@ const runMenuButton = () => {
 };
 
 window.addEventListener('load', function () {
+  //Generates favorites list if it doesn't exist
   if (!this.sessionStorage.getItem('favorites')) {
     let favorites = [];
     sessionStorage.setItem('favorites', JSON.stringify(favorites));
   }
+  //Sets up listener for home page items
   if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
     document.querySelector('#inputForm').addEventListener('submit', handleForm);
     document.getElementById('addIngredientButton').addEventListener('click', addIngredient);
     document.getElementById('clearButton').addEventListener('click', clearList);
+    //Establishes Inventory list if it doesn't exist, and disables submit button if there are no items in inventory
     if (!this.sessionStorage.getItem('inventory') || JSON.parse(this.sessionStorage.getItem('inventory')).length == 0) {
-      //document.getElementById('ingredientInput').addEventListener('keypress', addIngredient);
       let inventory = [];
       sessionStorage.setItem('inventory', JSON.stringify(inventory));
       let submitButton = document.getElementById("submitForm");
@@ -209,6 +209,7 @@ window.addEventListener('load', function () {
     }
     runMenuButton();
     printAllRecipes(defaultRecipes);
+    //Sets up listener for favorites page items
   } else if (window.location.pathname == '/favorites.html') {
     document.getElementById('submitInput').addEventListener('click', addShoppingIngredient);
     document.getElementById('clearInput').addEventListener('click', clearList);
