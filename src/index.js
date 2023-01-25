@@ -154,6 +154,8 @@ function clearList() {
     sessionStorage.setItem('inventory', JSON.stringify(inventory));
     refreshInventoryList();
     document.querySelector('#ingredientInput').value = null;
+    let submitButton = document.getElementById("submitForm");
+    submitButton.disabled = true;
   } else if (window.location.pathname == '/favorites.html') {
     let shoppingList = [];
     sessionStorage.setItem('shoppingList', JSON.stringify(shoppingList));
