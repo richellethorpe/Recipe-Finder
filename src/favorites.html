@@ -28,19 +28,28 @@
     <div class="row">
       <div class="column" id="favorites">
       <h1 class="fave">Your saved favorites!</h1>
+        <div>
+          <ul id="faves"></ul>
+        </div>
       </div>
 
-      <div class="column" id="postit" >
-      <form id="shop">
-        <label for="shoppingInput" id="shoppingInput">Shopping List:</label>
-        <input  type="text" name="shoppingInput" id="shoppingInputText">
-        <br>
-        <br>
-        <button type="submit" id="submitInput">Add to list!</button>
-      </form>
+      <div class="column">
+        <div id="postit" >
+          <div id="shop">
+            <ul id="shoppingList">
+            </ul>
+          </div>
+          <form id="shoppingInput">
+            <label for="shoppingInputText">Shopping List:</label>
+            <input id="shoppingInputText" type="text" name="shoppingText">
+            <br>
+            <br>
+            <button type="button" id="submitInput">Add to list!</button>
+            <button type="button" id="clearInput">Clear list!</button>
+            </form>
+        </div>
       </div>
     </div>
   </div>
 </body>
-
 </html>

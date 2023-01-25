@@ -309,6 +309,7 @@ p {
   align-items: center;
 } */
 
+
 /* Postit Note styling */
 #postit {
   line-height: 1;
@@ -352,17 +353,13 @@ p {
   transform: matrix(-1, -0.1, 0, 1, 0, 0);
 } 
 
-#shop {
+#shoppingInput {
   text-align: center;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 190px;
-}
-
-shoppingInput {
-  font-family: "homemade apple";
 }
 
 /* Column design for favorites page */
@@ -389,7 +386,13 @@ shoppingInput {
 }
 
 h1.fave {
-  font-size: 60px;
+  font-size: 50px;
   text-align: center;
+}
+
+#shop {
+  font-family: "homemade apple";
+  text-align: center;
+  margin-top: 20px;
 }
 
