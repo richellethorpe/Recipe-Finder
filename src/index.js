@@ -44,13 +44,14 @@ function addShoppingIngredient() {
 
 //UI Logic
 
-//Prints each element in an array of recipe objects
+//Prints all elements in an array of recipe objects
 function printAllRecipes(recipesListObject) {
   recipesListObject.forEach(element => {
     printRecipe(element);
   });
 }
 
+//Prints a single recipe object
 function printRecipe(recipeObject) {
   let results = document.querySelector("#showResponse");
   let divTag = document.createElement("div");
@@ -72,6 +73,14 @@ function printRecipe(recipeObject) {
   recipeLink.innerHTML = recipeObject.recipe.label;
   pTag.append(recipeLink);
   divTag.append(pTag);
+  //Creates Icon set for health labels
+  let healthTags = recipeObject.recipe.healthLabels;
+  let iconGroup = document.createElement('div');
+  iconGroup.setAttribute('class', 'icons');
+  healthTags.forEach(element => {
+    iconGroup.append(fetchIcon(element));
+  });
+  divTag.append(iconGroup);
   results.append(divTag);
   //Creates Add to Favorites Button only if on index.html page
   if (window.location.pathname !== '/favorites.html') {
@@ -86,13 +95,32 @@ function printRecipe(recipeObject) {
         sessionStorage.setItem('favorites', JSON.stringify(currentFavorites));
         favoriteButton.remove();
       }
-    }
+    };
     //Only adds add to favorite button if recipe is not on favorites session storage list
     let currentFavorites = JSON.parse(sessionStorage.getItem('favorites'));
     if (!currentFavorites.some(e => e.recipe.label === recipeObject.recipe.label)) {
       divTag.append(favoriteButton);
     }
     results.append(divTag);
+  }
+}
+
+//Creates text icon element for each health tag
+function fetchIcon(healthTag) {
+  let icon = document.createElement('span');
+  const iconKey = {
+    "Vegetarian": "V",
+    "Vegan": "VG",
+    "Pescatarian": "P",
+    "Dairy-Free": "DF",
+    "Gluten-Free": "GF"
+  };
+  if (healthTag in iconKey) {
+    icon.innerText = iconKey[healthTag];
+    icon.setAttribute('class', healthTag);
+    return icon;
+  } else {
+    return '';
   }
 }
 

@@ -16,7 +16,24 @@ body {
   background-color: #F0ECCF;
 }
 
+.contact {
+  background-image: url("https://thumbs.dreamstime.com/b/seamless-pattern-cartoon-food-funny-comic-eggs-bacon-sandwich-croissant-fruits-milk-apple-orange-fork-spoon-vector-91210881.jpg");
+}
+
 #formdiv {
+  font-family: 'Silkscreen', cursive;
+}
+
+.layer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10%;
+  background-color: rgb(250, 250, 245);
+  text-align: center;
   font-family: 'Silkscreen', cursive;
 }
 
@@ -28,7 +45,7 @@ body {
 }
 
 #listOfIngredients {
-  font-family: Hurricane;
+  font-family: 'Silkscreen', cursive;
   font-size: 30px;
 }
 
@@ -70,7 +87,7 @@ h1 {
   h1 {
     font-size: 6rem;
   }
-} 
+}
 
 .g {
   display: inline-flex;
@@ -264,7 +281,7 @@ h1 {
 
 .welcome {
   text-align: center;
-  font-family: Silkscreen;
+  font-family: 'Raleway', sans-serif;
 }
 
 #ingredientInput {
@@ -339,17 +356,9 @@ input.option {
 .recipeImg {
   cursor: pointer;
   width: 300px;
-  border-bottom: black;
-  border-style: solid;
-  border-width: 3px;
-}
-
-p {
-  text-align: center;
 }
 
 .card {
-  /* flex: 1 1 21rem; */
   width: 300px;
   margin: 10px 20px;
   background: #fff;
@@ -357,8 +366,12 @@ p {
   border-style: solid;
   border-width: 3px;
   overflow: hidden;
-  overflow: hidden;
-  /* box-shadow: 0 0 15px black; */
+}
+
+.card p {
+  text-align: center;
+
+  margin: 5px;
 }
 
 .top {
@@ -366,43 +379,16 @@ p {
   border-radius: 2px;
 }
 
-/* .#submitForm button{
-  display: flex;
-  align-items: center;
-} */
-
 .about {
   font-family: Silkscreen;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 20px;
-  text-align: center;
-}
 
-.about-title {
-  text-align: right;
-}
-
-.about-names {
-  text-align: center;
 }
 
 .about .container {
   text-align: center;
-}
-
-  .about-text {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-basis: 30%;
-
-}
-
-/* Column design for favorites page */
-/* .row {
-  display: flex;
 }
 
 #favorites {
@@ -422,7 +408,7 @@ p {
   position: relative;
   border: 1px solid #e8e8e8;
   border-top: 30px solid #fdfd86;
-  font-family: 'Reenie Beanie';
+  font-family: 'Raleway', sans-serif;
   font-size: 22px;
   border-bottom-right-radius: 60px 5px;
   display: inline-block;
@@ -510,4 +496,49 @@ h1.fave {
 
 a {
   color: black;
+}
+
+/* Health Label Tags */
+.icons {
+  display: flex;
+  justify-content: center;
+  font-family: Silkscreen;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.icons span {
+  display: flex;
+  margin: 2px;
+  margin-bottom: 10px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.icons .Vegan {
+  background-color: rgb(0, 128, 0);
+  color: white;
+}
+
+.icons .Pescatarian {
+  background-color: salmon;
+}
+
+.icons .Vegetarian {
+  background-color: lightgreen;
+  color: darkgreen;
+}
+
+.icons .Dairy-Free {
+  background-color: lightblue;
+  color: darkblue;
+}
+
+.icons .Gluten-Free {
+  background-color: burlywood;
+  color: brown;
 }
