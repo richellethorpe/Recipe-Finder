@@ -37,7 +37,7 @@ export const defaultRecipes = [
       "image": "https://minimalistbaker.com/wp-content/uploads/2022/07/Fire-Cider-Shots-in-just-15-minutes-Spicy-sweet-and-FULL-of-health-benefits-minimalistbaker-recipe-firecider-shots-5-1024x1536.jpg",
       "url": "https://minimalistbaker.com/immune-boosting-fresh-ginger-recipes/",
       "label": "Immune-Boosting Fresh Ginger Recipes",
-      "healthLabels": []
+      "healthLabels": ['Vegan', 'Vegetarian']
     }
   },
   {
