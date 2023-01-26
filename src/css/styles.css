@@ -401,7 +401,6 @@ input.option {
   text-align: center;
   margin: 25px;
   width: 250px;
-  width: min-content;
   min-height: 250px;
   max-height: 250px;
   padding-top: 35px;
@@ -462,15 +461,13 @@ input.option {
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: space-evenly;
-
 }
 
 .column {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  justify-content: space-between;
-
+  justify-content: space-evenly;
 }
 
 #favorites {
@@ -480,7 +477,7 @@ input.option {
 }
 
 #fave {
-  font-size: 55px;
+  font-size: 64px;
   text-align: center;
   font-family: "Fredoka One";
 }
