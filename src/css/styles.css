@@ -401,7 +401,6 @@ input.option {
   text-align: center;
   margin: 25px;
   width: 250px;
-  width: min-content;
   min-height: 250px;
   max-height: 250px;
   padding-top: 35px;
